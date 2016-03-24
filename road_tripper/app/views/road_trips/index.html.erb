@@ -2,7 +2,10 @@
 
 <h1>Listing Road Trips</h1>
 
-<p>No road trips yet</p>
+
+<% unless @road_trips.any? %> 
+  <p>No road trips yet</p>
+<% end %> 
 
 <table>
   <thead>
