@@ -21,6 +21,18 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
+  <%= f.fields_for :profile do |profile_form| %>
+ <div><%= profile_form.label :username %><br/>
+ <%= profile_form.text_field :username %></div>
+  <div><%= profile_form.label :hometown %><br />
+    <%= profile_form.text_field :hometown %></div>
+ <div><%= profile_form.label :first_name %><br />
+ <%= profile_form.text_field :first_name %></div>
+ <div><%= profile_form.label :last_name %><br />
+ <%= profile_form.text_field :last_name %></div>
+
+  <% end %>
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>

@@ -5,4 +5,15 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
          
   has_one :profile
+
+  accepts_nested_attributes_for :profile      
+
+  def profile
+    super || build_profile
+  end
+
+  def user_params
+    params.require(:user).permit(:email, :password, :password_confirmation, profile_attributes: [:username, :hometown, :first_name, :last_name, :id, :user_id])
+  end
+
 end
