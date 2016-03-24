@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160324181226) do
+ActiveRecord::Schema.define(version: 20160324192016) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,9 +21,12 @@ ActiveRecord::Schema.define(version: 20160324181226) do
     t.string   "destination"
     t.date     "start_date"
     t.date     "end_date"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "road_trip_id"
   end
+
+  add_index "itineraries", ["road_trip_id"], name: "index_itineraries_on_road_trip_id", using: :btree
 
   create_table "road_trips", force: :cascade do |t|
     t.string   "title"
@@ -31,4 +34,5 @@ ActiveRecord::Schema.define(version: 20160324181226) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "itineraries", "road_trips"
 end
