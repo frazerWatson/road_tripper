@@ -5,7 +5,7 @@ feature 'road_trip' do
     scenario 'should display a prompt to add a road trip' do
       visit '/'
       expect(page).to have_content 'No road trips yet'
-      expect(page).to have_link 'Add a road trip'
+      expect(page).to have_link 'New Road trip'
     end
   end
 end
