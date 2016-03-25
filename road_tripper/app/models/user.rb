@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
          
   has_one :profile
+  has_many :road_trips
 
   accepts_nested_attributes_for :profile      
 
