@@ -13,9 +13,9 @@ class RoadTripsController < ApplicationController
   end
 
   # GET /road_trips/new
-  def new
-    @road_trip = RoadTrip.new
-  end
+    def new
+      @road_trip = RoadTrip.new
+    end
 
   # GET /road_trips/1/edit
   def edit
@@ -25,7 +25,7 @@ class RoadTripsController < ApplicationController
   # POST /road_trips.json
   def create
     @road_trip = RoadTrip.new(road_trip_params)
-
+    @road_trip.user_id = current_user.id
     respond_to do |format|
       if @road_trip.save
         format.html { redirect_to @road_trip, notice: 'Road trip was successfully created.' }

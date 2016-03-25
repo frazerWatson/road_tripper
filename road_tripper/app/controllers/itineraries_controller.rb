@@ -13,8 +13,12 @@ class ItinerariesController < ApplicationController
   end
 
   # GET /itineraries/new
+  # def new
+  #   @itinerary = Itinerary.new
+  # end
+
   def new
-    @itinerary = Itinerary.new
+   @itinerary = Itinerary.new
   end
 
   # GET /itineraries/1/edit
@@ -25,7 +29,7 @@ class ItinerariesController < ApplicationController
   # POST /itineraries.json
   def create
     @itinerary = Itinerary.new(itinerary_params)
-
+    @itinerary.road_trip_id =
     respond_to do |format|
       if @itinerary.save
         format.html { redirect_to @itinerary, notice: 'Itinerary was successfully created.' }
@@ -69,6 +73,6 @@ class ItinerariesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def itinerary_params
-      params.require(:itinerary).permit(:origin, :destination, :start_date, :end_date)
+      params.require(:itinerary).permit(:origin, :destination, :start_date, :end_date, :road_trip_id)
     end
 end
