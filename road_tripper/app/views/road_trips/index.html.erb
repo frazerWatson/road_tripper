@@ -1,17 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Road Trips</h1>
+<% if current_user %>
+<%= current_user.profile.id %>
+<%= link_to 'View my profile', profile_path(current_user.profile.id) %> 
+<% end %>
 
-
-<% unless @road_trips.any? %> 
-  <p>No road trips yet</p>
-<% end %> 
+<h1>RoadTripper</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Title</th>
-      <th colspan="3"></th>
+      <th>RoadTripper</th>
+
     </tr>
   </thead>
 
@@ -19,8 +19,7 @@
     <% @road_trips.each do |road_trip| %>
       <tr>
         <td><%= road_trip.title %></td>
-        <td><%= link_to 'Show', road_trip %></td>
-        <td><%= link_to 'Edit', edit_road_trip_path(road_trip) %></td>
+        <td><%= link_to 'View Trip profile', road_trip %></td>
         <td><%= link_to 'Destroy', road_trip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -29,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Road trip', new_road_trip_path %>
+<%= link_to 'New Road trip', new_road_trip_path %>   
