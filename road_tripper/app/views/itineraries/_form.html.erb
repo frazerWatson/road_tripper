@@ -10,7 +10,9 @@
       </ul>
     </div>
   <% end %>
-
+  <div class="field">
+    <%= f.hidden_field :road_trip_id, value: params[:id] %>
+  </div>
   <div class="field">
     <%= f.label :origin %><br>
     <%= f.text_field :origin %>
