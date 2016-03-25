@@ -1,6 +1,17 @@
 <h1>Dashboard</h1>
 
 <%= render 'form' %>
+
+<% unless @road_trip.itinerary %>
 <%= link_to 'Add Itinerary', new_itinerary_path(:id => @road_trip.id) %>
-<%= link_to 'Show', @road_trip %> |
+<% else %>
+
+<div>
+  Origin: <%= @road_trip.itinerary.origin %><br />
+  Destination: <%= @road_trip.itinerary.destination %><br />
+  Start Date: <%= @road_trip.itinerary.start_date %><br />
+  End Date: <%= @road_trip.itinerary.end_date %><br />
+</div>
+<% end %>
+
 <%= link_to 'Back', road_trips_path %>
