@@ -29,7 +29,7 @@ feature 'signing up' do
     fill_in 'First name', with: 'Dan'
     fill_in 'Last name', with: 'Hash'
     click_button 'Sign up'
-    visit '/profiles/:id/'
+    click_link 'View my profile'
     expect(page).to have_content 'DanH'
   end
 
