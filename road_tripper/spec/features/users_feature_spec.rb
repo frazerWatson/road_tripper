@@ -33,5 +33,21 @@ feature 'signing up' do
     expect(page).to have_content 'DanH'
   end
 
+  scenario 'allow anyone to view user profiles' do
+    visit '/'
+    click_link 'Sign up'
+    fill_in 'Email', with: 'bob@a.com'
+    fill_in 'Password', with: '88888888'
+    fill_in 'Password confirmation', with: '88888888'
+    fill_in 'Username', with: 'Bob888'
+    fill_in 'Hometown', with: 'London'
+    fill_in 'First name', with: 'Bob'
+    fill_in 'Last name', with: 'Hart'
+    click_button 'Sign up'
+    click_link 'Sign out'
+    click_link 'View all profiles'
+    expect(page).to have_content 'Bob888'
+  end
+
 
 end
