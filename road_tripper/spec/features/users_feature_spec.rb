@@ -48,6 +48,12 @@ feature 'signing up' do
     click_link 'View all profiles'
     expect(page).to have_content 'Bob888'
   end
+end
 
-
+feature 'creating road trips' do
+    scenario 'non-signed-in users cannot create a road trip' do
+        visit '/'
+        click_link('New Road trip')
+        expect(current_path).to eq '/users/sign_in'
+    end
 end
