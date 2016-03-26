@@ -29,7 +29,6 @@ class ItinerariesController < ApplicationController
   # POST /itineraries.json
   def create
     @itinerary = Itinerary.new(itinerary_params)
-    @itinerary.road_trip_id =
     respond_to do |format|
       if @itinerary.save
         url = "/road_trips/#{@itinerary.road_trip_id}/edit"

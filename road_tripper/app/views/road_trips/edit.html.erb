@@ -4,6 +4,8 @@
 
 <% unless @road_trip.itinerary %>
 <%= link_to 'Add Itinerary', new_itinerary_path(:id => @road_trip.id) %>
+<%= link_to 'Add New Post', new_post_path(:id => @road_trip.id) %>
+<%= link_to 'View Trip Profile', road_trip_path(@road_trip.id) %>
 <% else %>
 
 <div>
