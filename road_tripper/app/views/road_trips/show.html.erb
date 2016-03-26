@@ -1,9 +1,16 @@
+<h1>Trip Profile</h1>
 <p id="notice"><%= notice %></p>
 
 <p>
   <strong>Title:</strong>
   <%= @road_trip.title %>
 </p>
+
+<% @road_trip.posts.reverse_each do |post| %>
+  <%= post.created_at %></br>
+  <%= post.title %></br>
+  <%= post.body %></br>
+<% end %>
 
 <%= link_to 'Dashboard', edit_road_trip_path(@road_trip) %> |
 <%= link_to 'Back', road_trips_path %>
