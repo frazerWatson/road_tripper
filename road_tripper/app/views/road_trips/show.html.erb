@@ -9,6 +9,7 @@
 <% @road_trip.posts.reverse_each do |post| %>
   <%= post.created_at %></br>
   <%= post.title %></br>
+  <%= image_tag post.image.url(:medium) %></br>
   <%= post.body %></br><br>
   <%= link_to 'Add Comment', new_comment_path(:id => post.id) %><br>
   <% post.comments.reverse_each do |comment| %>
