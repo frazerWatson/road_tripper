@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
          
   has_one :profile
   has_many :road_trips
+  has_many :comments
 
   accepts_nested_attributes_for :profile      
 
