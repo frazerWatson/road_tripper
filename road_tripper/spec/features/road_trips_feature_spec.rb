@@ -1,13 +1,13 @@
 require 'rails_helper'
-require 'capybara/dsl'
-require 'selenium-webdriver'
+# require 'capybara/dsl'
+# require 'selenium-webdriver'
 
 feature 'road_trip' do
 
-  before do
-     include Capybara::DSL
-     Capybara.default_driver = :selenium
-  end
+  # before do
+  #    include Capybara::DSL
+  #    Capybara.default_driver = :selenium
+  # end
 
   context 'no road trips have been added' do
     scenario 'should display a prompt to add a road trip' do

@@ -1,6 +1,6 @@
 require 'rails_helper'
-require 'capybara/dsl'
-require 'selenium-webdriver'
+# require 'capybara/dsl'
+# require 'selenium-webdriver'
 
 feature 'posting posts on road trips' do
 
@@ -31,10 +31,10 @@ feature 'posting posts on road trips' do
 end
 
 feature 'attach a photo to a post' do
-  before do
-    include Capybara::DSL
-    Capybara.default_driver = :selenium
-  end
+  # before do
+  #   include Capybara::DSL
+  #   Capybara.default_driver = :selenium
+  # end
 
   scenario 'allows user attach a photo with their posts' do
     visit '/'
