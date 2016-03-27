@@ -1,4 +1,4 @@
-Road Tripper App
+A road tripper
 
 [![Coverage Status](https://coveralls.io/repos/github/frazerWatson/road_tripper/badge.svg?branch=master)](https://coveralls.io/github/frazerWatson/road_tripper?branch=master)
 
