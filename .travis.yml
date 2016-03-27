@@ -1,6 +1,6 @@
 rvm: '2.2.3'
 script: bundle exec rspec spec
 script:
- - bundle exec road_tripper/bin/rake db:create
- - bundle exec road_tripper/bin/rake db:migrate
- - bundle exec road_tripper/rspec spec
+ - bundle exec bin/rake db:create
+ - bundle exec bin/rake db:migrate
+ - bundle exec rspec spec
