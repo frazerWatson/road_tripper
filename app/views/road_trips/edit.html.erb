@@ -8,12 +8,19 @@
 <%= link_to 'View trip profile', road_trip_path(@road_trip.id) %>
 <% else %>
 <%= link_to 'Edit itinerary', edit_itinerary_path(@road_trip.itinerary.id) %>
-
+<%= link_to 'Add new Stop', new_stop_path(:id => @road_trip.itinerary.id) %>
 <div>
   Origin: <%= @road_trip.itinerary.origin %><br />
-  Destination: <%= @road_trip.itinerary.destination %><br />
   Start Date: <%= @road_trip.itinerary.start_date %><br />
+  <br />
+  <% if @road_trip.itinerary.stops.any? %>
+    <% @road_trip.itinerary.stops.order(:date).each do |stop| %>
+      <%= stop.location %><br />
+      <%= stop.date %><br />
+      <br />
+    <% end %>
+  <% end %>
+  Destination: <%= @road_trip.itinerary.destination %><br />
   End Date: <%= @road_trip.itinerary.end_date %><br />
 </div>
 <% end %>
-

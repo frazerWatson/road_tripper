@@ -10,7 +10,9 @@
       </ul>
     </div>
   <% end %>
-
+  <div class="field">
+    <%= f.hidden_field :itinerary_id, value: params[:id] %>
+  </div>
   <div class="field">
     <%= f.label :location %><br>
     <%= f.text_field :location %>
