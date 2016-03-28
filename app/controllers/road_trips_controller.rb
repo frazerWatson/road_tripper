@@ -13,17 +13,19 @@ class RoadTripsController < ApplicationController
   end
 
   # GET /road_trips/new
-    def new
-      @road_trip = RoadTrip.new
-    end
+  def new
+    @road_trip = RoadTrip.new
+  end
 
   # GET /road_trips/1/edit
   def edit
-    @road_trip_stops = @road_trip.itinerary.stops 
-    @hash = Gmaps4rails.build_markers(@road_trip_stops) do |stop, marker|
-    marker.lat stop.latitude
-    marker.lng stop.longitude
-  end
+    if @road_trip.itinerary
+      @road_trip_stops = @road_trip.itinerary.stops 
+      @hash = Gmaps4rails.build_markers(@road_trip_stops) do |stop, marker|
+        marker.lat stop.latitude
+        marker.lng stop.longitude
+      end
+    end
   end
 
   # POST /road_trips
@@ -76,4 +78,4 @@ class RoadTripsController < ApplicationController
     def road_trip_params
       params.require(:road_trip).permit(:title)
     end
-end
+  end
