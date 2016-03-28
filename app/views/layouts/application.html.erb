@@ -8,6 +8,8 @@
 </head>
 <body>
 
+<%= link_to 'Homepage', road_trips_path %>
+
 <% if user_signed_in? %>
   <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
 <% else %>

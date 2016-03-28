@@ -1,15 +1,14 @@
 require 'rails_helper'
 
-# Specs in this file have access to a helper object that includes
-# the ItinerariesHelper. For example:
-#
-# describe ItinerariesHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       expect(helper.concat_strings("this","that")).to eq("this that")
-#     end
-#   end
-# end
-RSpec.describe ItinerariesHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+def create_itinerary(origin, destination)
+  click_link 'Add itinerary'
+  fill_in 'Origin', with: origin
+  fill_in 'Destination', with: destination
+  select '2016', from: 'itinerary[start_date(1i)]'
+  select 'April', from: 'itinerary[start_date(2i)]'
+  select '1', from: 'itinerary[start_date(3i)]'
+  select '2016', from: 'itinerary[end_date(1i)]'
+  select 'May', from: 'itinerary[end_date(2i)]'
+  select '10', from: 'itinerary[end_date(3i)]'
+  click_button 'Create Itinerary'
 end

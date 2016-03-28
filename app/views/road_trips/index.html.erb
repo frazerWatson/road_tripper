@@ -1,4 +1,5 @@
 <p id="notice"><%= notice %></p>
+<%= link_to 'New road trip', new_road_trip_path %>
 
 <% if current_user %>
 <%= current_user.profile.id %>
@@ -20,13 +21,10 @@
     <% @road_trips.each do |road_trip| %>
       <tr>
         <td><%= road_trip.title %></td>
-        <td><%= link_to 'View Trip profile', road_trip %></td>
-        <td><%= link_to 'Destroy', road_trip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'View trip profile', road_trip %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Road trip', new_road_trip_path %>   
