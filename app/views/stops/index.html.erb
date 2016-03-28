@@ -14,7 +14,7 @@
   <tbody>
     <% @stops.each do |stop| %>
       <tr>
-        <td><%= stop.location %></td>
+        <td><%= stop.address %></td>
         <td><%= stop.date %></td>
         <td><%= link_to 'Show', stop %></td>
         <td><%= link_to 'Edit', edit_stop_path(stop) %></td>

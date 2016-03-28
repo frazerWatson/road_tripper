@@ -7,7 +7,6 @@ Rails.application.routes.draw do
     sessions: 'users/sessions',
     registrations: 'users/registrations'
   }
-  resources :itineraries
 
   resources :road_trips
   # The priority is based upon order of creation: first created -> highest priority.
