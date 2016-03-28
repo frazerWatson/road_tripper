@@ -2,25 +2,35 @@
 
 <%= render 'form' %>
 
-<% unless @road_trip.itinerary %>
-<%= link_to 'Add itinerary', new_itinerary_path(:id => @road_trip.id) %>
+<div style='width: 800px;'>
+  <div id="map" style='width: 800px; height: 400px;'></div>
+</div>
+
+
+<script type="text/javascript">
+handler = Gmaps.build('Google');
+handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+  markers = handler.addMarkers(<%=raw @hash.to_json %>)
+  handler.bounds.extendWith(markers);
+  handler.fitMapToBounds();
+});
+</script>
+
+
+
 <%= link_to 'Add new post', new_post_path(:id => @road_trip.id) %>
 <%= link_to 'View trip profile', road_trip_path(@road_trip.id) %>
-<% else %>
-<%= link_to 'Edit itinerary', edit_itinerary_path(@road_trip.itinerary.id) %>
-<%= link_to 'Add new Stop', new_stop_path(:id => @road_trip.itinerary.id) %>
+<%= link_to 'Add new Stop', new_stop_path(:id => @road_trip.id) %>
 <div>
-  Origin: <%= @road_trip.itinerary.origin %><br />
-  Start Date: <%= @road_trip.itinerary.start_date %><br />
-  <br />
-  <% if @road_trip.itinerary.stops.any? %>
-    <% @road_trip.itinerary.stops.order(:date).each do |stop| %>
-      <%= stop.location %><br />
+  <% if @road_trip.stops.any? %>
+    <% @road_trip.stops.order(:date).each do |stop| %>
+      <%= stop.address %><br />
+      <%= stop.description %><br />
       <%= stop.date %><br />
+      <%= link_to 'Delete stop', stop_path(stop), method: :delete %>
       <br />
     <% end %>
   <% end %>
-  Destination: <%= @road_trip.itinerary.destination %><br />
-  End Date: <%= @road_trip.itinerary.end_date %><br />
+
 </div>
-<% end %>
+
