@@ -19,6 +19,7 @@ feature 'Users and profiles' do
     user_sign_up("user1@test.com")
     click_link 'View my profile'
     expect(page).to have_content 'DanH'
+    expect(page).to have_selector("img")
   end
 
   scenario 'anyone can view all user profiles' do

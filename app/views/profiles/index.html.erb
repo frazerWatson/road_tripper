@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th></th>
       <th>Username</th>
       <th>Hometown</th>
       <th>First name</th>
@@ -16,6 +17,7 @@
   <tbody>
     <% @profiles.each do |profile| %>
       <tr>
+        <td><%= image_tag profile.avatar.url(:thumb) %></td>
         <td><%= profile.username %></td>
         <td><%= profile.hometown %></td>
         <td><%= profile.first_name %></td>
