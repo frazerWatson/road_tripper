@@ -5,6 +5,12 @@
 # files.
 require 'coveralls'
 require 'simplecov'
+require 'support/database_cleaner'
+require 'helpers/users_helper_spec'
+require 'helpers/road_trips_helper_spec'
+require 'helpers/posts_helper_spec'
+require 'helpers/itineraries_helper_spec'
+require 'helpers/comments_helper_spec'
 
 SimpleCov.formatters = [
  SimpleCov::Formatter::HTMLFormatter,
@@ -18,7 +24,6 @@ Coveralls.wear!
 # a separate helper file that requires the additional dependencies and performs
 # the additional setup, and require it from the spec files that actually need
 # it.
-require 'support/database_cleaner'
 #
 # The `.rspec` file also contains a few flags that are not defaults but that
 # users commonly want.

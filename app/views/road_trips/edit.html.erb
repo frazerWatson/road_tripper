@@ -3,10 +3,11 @@
 <%= render 'form' %>
 
 <% unless @road_trip.itinerary %>
-<%= link_to 'Add Itinerary', new_itinerary_path(:id => @road_trip.id) %>
-<%= link_to 'Add New Post', new_post_path(:id => @road_trip.id) %>
-<%= link_to 'View Trip Profile', road_trip_path(@road_trip.id) %>
+<%= link_to 'Add itinerary', new_itinerary_path(:id => @road_trip.id) %>
+<%= link_to 'Add new post', new_post_path(:id => @road_trip.id) %>
+<%= link_to 'View trip profile', road_trip_path(@road_trip.id) %>
 <% else %>
+<%= link_to 'Edit itinerary', edit_itinerary_path(@road_trip.itinerary.id) %>
 
 <div>
   Origin: <%= @road_trip.itinerary.origin %><br />
@@ -16,4 +17,3 @@
 </div>
 <% end %>
 
-<%= link_to 'Back', road_trips_path %>

@@ -11,12 +11,14 @@
   <%= post.title %></br>
   <%= image_tag post.image.url(:medium) %></br>
   <%= post.body %></br><br>
-  <%= link_to 'Add Comment', new_comment_path(:id => post.id) %><br>
+  <%= link_to 'Add comment', new_comment_path(:id => post.id) %><br>
   <% post.comments.reverse_each do |comment| %>
   <%= comment.created_at %><br>
   <%= comment.remark %><br>
   <% end %>
 <% end %>
 
-<%= link_to 'Dashboard', edit_road_trip_path(@road_trip) %> |
-<%= link_to 'Back', road_trips_path %>
+<% if current_user == @road_trip.user %>
+<%= link_to 'Dashboard', edit_road_trip_path(@road_trip) %>
+<%= link_to 'Delete road trip', road_trip_path(@road_trip), method: :delete %>
+<% end %>
