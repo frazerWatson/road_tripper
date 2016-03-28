@@ -28,7 +28,7 @@ class StopsController < ApplicationController
 
     respond_to do |format|
       if @stop.save
-        url = "/road_trips/#{@stop.itinerary.road_trip_id}/edit"
+        url = "/road_trips/#{@stop.road_trip_id}/edit"
         format.html { redirect_to url, notice: 'Stop was successfully created.' }
         format.json { render :show, status: :created, location: @stop }
       else
@@ -55,9 +55,10 @@ class StopsController < ApplicationController
   # DELETE /stops/1
   # DELETE /stops/1.json
   def destroy
+    dashboard_url = "/road_trips/#{@stop.road_trip_id}/edit"
     @stop.destroy
     respond_to do |format|
-      format.html { redirect_to stops_url, notice: 'Stop was successfully destroyed.' }
+      format.html { redirect_to dashboard_url, notice: 'Stop was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -70,6 +71,6 @@ class StopsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def stop_params
-      params.require(:stop).permit(:location, :date, :itinerary_id, :latitude, :longitude, :address, :description, :title)
+      params.require(:stop).permit(:location, :date, :road_trip_id, :latitude, :longitude, :address, :description, :title)
     end
 end

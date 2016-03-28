@@ -19,17 +19,10 @@ class RoadTripsController < ApplicationController
 
   # GET /road_trips/1/edit
   def edit
-    if @road_trip.itinerary
-      @road_trip_stops = @road_trip.itinerary.stops 
+      @road_trip_stops = @road_trip.stops 
       @hash = Gmaps4rails.build_markers(@road_trip_stops) do |stop, marker|
         marker.lat stop.latitude
         marker.lng stop.longitude
-     end
-      p '$$$$$$$$$$$$'
-      p @road_trip_stops
-      p '$$$$$$$$$$$$'
-      p @hash
-      p '$$$$$$$$$$$$'
     end
   end
 
