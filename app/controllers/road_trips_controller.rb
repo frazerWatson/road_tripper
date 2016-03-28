@@ -24,7 +24,12 @@ class RoadTripsController < ApplicationController
       @hash = Gmaps4rails.build_markers(@road_trip_stops) do |stop, marker|
         marker.lat stop.latitude
         marker.lng stop.longitude
-      end
+     end
+      p '$$$$$$$$$$$$'
+      p @road_trip_stops
+      p '$$$$$$$$$$$$'
+      p @hash
+      p '$$$$$$$$$$$$'
     end
   end
 
