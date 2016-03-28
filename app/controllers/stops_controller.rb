@@ -28,7 +28,8 @@ class StopsController < ApplicationController
 
     respond_to do |format|
       if @stop.save
-        format.html { redirect_to @stop, notice: 'Stop was successfully created.' }
+        url = "/road_trips/#{@stop.itinerary.road_trip_id}/edit"
+        format.html { redirect_to url, notice: 'Stop was successfully created.' }
         format.json { render :show, status: :created, location: @stop }
       else
         format.html { render :new }
@@ -69,6 +70,6 @@ class StopsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def stop_params
-      params.require(:stop).permit(:location, :date)
+      params.require(:stop).permit(:location, :date, :itinerary_id)
     end
 end
