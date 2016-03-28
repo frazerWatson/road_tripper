@@ -8,39 +8,44 @@
 
 
 <script type="text/javascript">
- var currentPosition;
- if (navigator.geolocation) {
-  navigator.geolocation.getCurrentPosition(success, error);
-} else {
-  alert('geolocation not supported');
-}
-function success(position) {
-  currentPosition = { "lat": position.coords.latitude, "lng": position.coords.longitude }
-  console.log("ehehe")
-  loadMap();
-}
-function error(msg) {
-  currentPosition = { "lat": 51.517340, "lng": -0.073281 }
-  loadMap();
-}
 
-var loadMap = function(){
-  handler = Gmaps.build('Google');
-  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-    <% if @hash.empty? %>
-    console.log(currentPosition)
-    markers = handler.addMarkers([currentPosition])
-    handler.bounds.extendWith(markers);
-    handler.fitMapToBounds();
-    handler.getMap().setZoom(12);
-    <% else %>
-    markers = handler.addMarkers(<%=raw @hash.to_json %>)
-    handler.bounds.extendWith(markers);
-    handler.fitMapToBounds();
-    <% end %>
+  var currentLocation = { "lat": 51.517340, "lng": -0.073281 };
 
-  });
-};
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(success, error);
+  }
+  else {
+    alert('geolocation not supported');
+  }
+
+  function success(position) {
+    currentLocation = { "lat": position.coords.latitude, "lng": position.coords.longitude }
+    loadMap();
+  }
+  function error(msg) {
+  }
+
+
+  var loadMap = function(){
+    handler = Gmaps.build('Google');
+    handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+      <% if @hash.empty? %>
+      markers = handler.addMarkers([currentLocation])
+      handler.bounds.extendWith(markers);
+      handler.fitMapToBounds();
+      handler.getMap().setZoom(12);
+      <% else %>
+      markers = handler.addMarkers(<%=raw @hash.to_json %>)
+      handler.bounds.extendWith(markers);
+      handler.fitMapToBounds();
+      <% if @hash.length == 1 %>
+      handler.getMap().setZoom(12);
+      <% end %>
+      <% end %>
+    });
+  }
+  loadMap();
+
 </script>
 
 
