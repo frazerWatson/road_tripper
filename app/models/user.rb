@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   end
 
   def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation, profile_attributes: [:username, :hometown, :first_name, :last_name, :id, :user_id])
+    params.require(:user).permit(:email, :password, :password_confirmation, profile_attributes: [:username, :avatar, :hometown, :first_name, :last_name, :id, :user_id])
   end
 
 end
