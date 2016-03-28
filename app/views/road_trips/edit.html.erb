@@ -9,35 +9,38 @@
 
 <script type="text/javascript">
  var currentPosition;
- var getLocation = function() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(success, error);
-  } else {
+ if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(success, error);
+} else {
   alert('geolocation not supported');
-  }
-  function success(position) {
-    currentPosition = { "lat": position.coords.latitude, "lng": position.coords.longitude }
-  }
-  function error(msg) {
-    alert('error: ' + msg);
-  }
+}
+function success(position) {
+  currentPosition = { "lat": position.coords.latitude, "lng": position.coords.longitude }
+  console.log("ehehe")
+  loadMap();
+}
+function error(msg) {
+  currentPosition = { "lat": 51.517340, "lng": -0.073281 }
+  loadMap();
 }
 
-handler = Gmaps.build('Google');
-handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-  <% if @hash.empty? %>
-  getLocation();
-  console.log(currentPosition)
-  markers = handler.addMarkers([{ "lat": 21.158964, "lng": -86.845937 }])
-  handler.bounds.extendWith(markers);
-  handler.fitMapToBounds();
-  handler.getMap().setZoom(12);
-  <% else %>
-  markers = handler.addMarkers(<%=raw @hash.to_json %>)
-  handler.bounds.extendWith(markers);
-  handler.fitMapToBounds();
-  <% end %>
-});
+var loadMap = function(){
+  handler = Gmaps.build('Google');
+  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+    <% if @hash.empty? %>
+    console.log(currentPosition)
+    markers = handler.addMarkers([currentPosition])
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+    handler.getMap().setZoom(12);
+    <% else %>
+    markers = handler.addMarkers(<%=raw @hash.to_json %>)
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+    <% end %>
+
+  });
+};
 </script>
 
 
