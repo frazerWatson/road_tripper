@@ -2,6 +2,33 @@
 
 <%= render 'form' %>
 
+<div style='width: 800px;'>
+  <div id="map" style='width: 800px; height: 400px;'></div>
+</div>
+
+<script type="text/javascript">
+handler = Gmaps.build('Google');
+handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+  markers = handler.addMarkers([
+    {
+      "lat": 0,
+      "lng": 0,
+      "picture": {
+        "url": "http://people.mozilla.com/~faaborg/files/shiretoko/firefoxIcon/firefox-32.png",
+        "width":  32,
+        "height": 32
+      },
+      "infowindow": "hello!"
+    }
+  ]);
+  handler.bounds.extendWith(markers);
+  handler.fitMapToBounds();
+});
+</script>
+<script>
+    markers = handler.addMarkers(<%=raw @hash.to_json %>);
+</script>
+
 <% unless @road_trip.itinerary %>
 <%= link_to 'Add itinerary', new_itinerary_path(:id => @road_trip.id) %>
 <%= link_to 'Add new post', new_post_path(:id => @road_trip.id) %>
@@ -15,7 +42,8 @@
   <br />
   <% if @road_trip.itinerary.stops.any? %>
     <% @road_trip.itinerary.stops.order(:date).each do |stop| %>
-      <%= stop.location %><br />
+      <%= stop.address %><br />
+      <%= stop.description %><br />
       <%= stop.date %><br />
       <br />
     <% end %>
