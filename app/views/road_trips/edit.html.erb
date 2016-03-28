@@ -34,20 +34,53 @@
       handler.bounds.extendWith(markers);
       handler.fitMapToBounds();
       handler.getMap().setZoom(12);
-      <% else %>
+      <% elsif @hash.length == 1 %>
       markers = handler.addMarkers(<%=raw @hash.to_json %>)
       handler.bounds.extendWith(markers);
       handler.fitMapToBounds();
-      <% if @hash.length == 1 %>
       handler.getMap().setZoom(12);
-      <% end %>
       <% end %>
     });
   }
-  loadMap();
+  <% if @hash.empty? || @hash.length == 1 %>
+    loadMap();
+  <% else %>
+
+function initialize() {
+var directionsDisplay = new google.maps.DirectionsRenderer();
+var directionsService = new google.maps.DirectionsService();
+
+function calcRoute() {
+  var origin      = new google.maps.LatLng(<%= @road_trip.stops[0].latitude %>, <%= @road_trip.stops[0].longitude %>);
+  var destination = new google.maps.LatLng(<%= @road_trip.stops[1].latitude %>, <%= @road_trip.stops[1].longitude %>);
+  var request = {
+      origin:      origin,
+      destination: destination,
+      travelMode:  google.maps.TravelMode.DRIVING
+  };
+  directionsService.route(request, function(response, status) {
+    if (status == google.maps.DirectionsStatus.OK) {
+      directionsDisplay.setDirections(response);
+    }
+  });
+}
+
+calcRoute();
+
+var handler = Gmaps.build('Google');
+handler.buildMap({ internal: {id: 'directions'}}, function(){
+  directionsDisplay.setMap(handler.getMap());
+});
+
+}
+google.maps.event.addDomListener(window, "load", initialize);
+
+<% end %>
 
 </script>
-
+ <div style='width: 800px;'>
+    <div id="directions" style='width: 800px; height: 400px;'></div>
+  </div>
 
 
 <%= link_to 'Add new post', new_post_path(:id => @road_trip.id) %>
