@@ -10,6 +10,12 @@ class RoadTripsController < ApplicationController
   # GET /road_trips/1
   # GET /road_trips/1.json
   def show
+    @current_location = request.location.city
+    @road_trip_stops = @road_trip.stops
+    @hash = Gmaps4rails.build_markers(@road_trip_stops) do |stop, marker|
+      marker.lat stop.latitude
+      marker.lng stop.longitude
+    end
   end
 
   # GET /road_trips/new
@@ -19,11 +25,8 @@ class RoadTripsController < ApplicationController
 
   # GET /road_trips/1/edit
   def edit
-    p "$$$$$$$$$$$$$$$$$$$"
       @current_location = request.location.city
-      p @current_location
-      p '$$$$$$$$$$$$$'
-      @road_trip_stops = @road_trip.stops 
+      @road_trip_stops = @road_trip.stops
       @hash = Gmaps4rails.build_markers(@road_trip_stops) do |stop, marker|
         marker.lat stop.latitude
         marker.lng stop.longitude
@@ -78,6 +81,6 @@ class RoadTripsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def road_trip_params
-      params.require(:road_trip).permit(:title)
+      params.require(:road_trip).permit(:title, :description, :user_id)
     end
   end
