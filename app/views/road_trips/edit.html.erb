@@ -6,9 +6,7 @@
   <div id="map" style='width: 800px; height: 400px;'></div>
 </div>
 
-
 <script type="text/javascript">
-
   var currentLocation = { "lat": 51.517340, "lng": -0.073281 };
 
   if (navigator.geolocation) {
@@ -42,6 +40,7 @@
       <% end %>
     });
   }
+  
   <% if @hash.empty? || @hash.length == 1 %>
   loadMap();
   <% else %>
@@ -71,6 +70,21 @@
       console.log(stopsArray + "hehehehehehheh")
       console.log(stopsArray[0].latitude)
 
+   stopsArray = stopsArray.sort(function (a, b) {
+      if (a.value > b.value) {
+        return 1;
+      }
+      if (a.value < b.value) {
+        return -1;
+      }
+      // a must be equal to b
+      return 0;
+    });
+
+   for (i =0; i < stopsArray.length; i++){
+   console.log(stopsArray[i].address + "####################")
+}
+
     for ( i= 0; i < stopsArray.length; i++ ) {
       var subObject = {}
       subObject.location = new google.maps.LatLng(stopsArray[i].latitude, stopsArray[i].longitude);
@@ -94,7 +108,7 @@
           }
         });
       }
-
+      $('#map').prop("id","directions");
       calcRoute();
 
       var handler = Gmaps.build('Google');
@@ -111,19 +125,6 @@
   </script>
 
 
-
-
-
-
-
-
-
-
-
-
- <div style='width: 800px;'>
-    <div id="directions" style='width: 800px; height: 400px;'></div>
-  </div>
 
 <%= link_to 'Add new post', new_post_path(:id => @road_trip.id) %>
 <%= link_to 'View trip profile', road_trip_path(@road_trip.id) %>
