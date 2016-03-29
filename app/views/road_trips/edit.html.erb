@@ -46,7 +46,6 @@
   <% else %>
 
     $.getJSON('/stops.json', function(data){
-      console.log(data)
       drawMap(data);
     })
 
@@ -56,10 +55,8 @@
 
       var wps = [];
       var jsonStops = data;
-      console.log(jsonStops + "HhHHHHHHH")
       var roadTripId = <%= @road_trip.id %>
       var stopsArray = [];
-      console.log(jsonStops[0].road_trip_id + "hfejhfehfiuhshfiueshu")
 
       for (i=0; i < jsonStops.length; i++) {
         if (jsonStops[i].road_trip_id == roadTripId) {
@@ -67,8 +64,6 @@
           console.log(jsonStops[i])
         }
       }
-      console.log(stopsArray + "hehehehehehheh")
-      console.log(stopsArray[0].latitude)
 
    stopsArray = stopsArray.sort(function (a, b) {
       if (a.value > b.value) {
@@ -82,7 +77,6 @@
     });
 
    for (i =0; i < stopsArray.length; i++){
-   console.log(stopsArray[i].address + "####################")
 }
 
     for ( i= 0; i < stopsArray.length; i++ ) {
@@ -90,8 +84,6 @@
       subObject.location = new google.maps.LatLng(stopsArray[i].latitude, stopsArray[i].longitude);
       wps.push(subObject)
     }
-    console.log(stopsArray.length)
-      console.log(stopsArray[0].latitude + "$$$$")
 
         function calcRoute() {
          var origin      = new google.maps.LatLng(stopsArray[0].latitude, stopsArray[0].longitude);
@@ -119,7 +111,7 @@
     
 
   }
-  //  google.maps.event.addDomListener(window, "load", initialize);
+
 
     <% end %>
   </script>
