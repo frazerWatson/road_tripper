@@ -1,30 +1,9 @@
-<p id="notice"><%= notice %></p>
-<%= link_to 'New road trip', new_road_trip_path %>
+<h1>Roads well traveled...</h1>
+<%= link_to 'Begin your road trip', new_road_trip_path %>
 
-<% if current_user %>
-<%= current_user.profile.id %>
-<%= link_to 'View my profile', profile_path(current_user.profile.id) %> 
-<% end %>
-<%= link_to 'View all profiles', profiles_path %> 
+  <% @road_trips.each do |road_trip| %>
+      <p><%= road_trip.title %></p>
+      <p><%= link_to 'View trip', road_trip %></p>
+  <% end %>
 
-<h1>RoadTripper</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>RoadTripper</th>
-
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @road_trips.each do |road_trip| %>
-      <tr>
-        <td><%= road_trip.title %></td>
-        <td><%= link_to 'View trip profile', road_trip %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+  <%= link_to 'All profiles', profiles_path %>

@@ -1,15 +1,11 @@
-<h1>Trip Profile</h1>
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @road_trip.title %>
-</p>
+<h1><%= @road_trip.title %></h1>
 
 <% @road_trip.posts.reverse_each do |post| %>
   <%= post.created_at %></br>
   <%= post.title %></br>
-  <%= image_tag post.image.url(:medium) %></br>
+  <% if post.image.file? %>
+    <%= image_tag post.image.url(:medium) %></br>
+  <% end %>
   <%= post.body %></br><br>
   <%= link_to 'Add comment', new_comment_path(:id => post.id) %><br>
   <% post.comments.reverse_each do |comment| %>
