@@ -81,6 +81,6 @@ class RoadTripsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def road_trip_params
-      params.require(:road_trip).permit(:title)
+      params.require(:road_trip).permit(:title, :description, :user_id)
     end
   end
