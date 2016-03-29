@@ -27,18 +27,6 @@ ActiveRecord::Schema.define(version: 20160329170336) do
   add_index "comments", ["post_id"], name: "index_comments_on_post_id", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
-  create_table "itineraries", force: :cascade do |t|
-    t.string   "origin"
-    t.string   "destination"
-    t.date     "start_date"
-    t.date     "end_date"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.integer  "road_trip_id"
-  end
-
-  add_index "itineraries", ["road_trip_id"], name: "index_itineraries_on_road_trip_id", using: :btree
-
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.text     "body"
@@ -73,17 +61,6 @@ ActiveRecord::Schema.define(version: 20160329170336) do
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
 
-  create_table "relationships", force: :cascade do |t|
-    t.integer  "follower_id"
-    t.integer  "followed_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  add_index "relationships", ["followed_id"], name: "index_relationships_on_followed_id", using: :btree
-  add_index "relationships", ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true, using: :btree
-  add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id", using: :btree
-
   create_table "road_trips", force: :cascade do |t|
     t.string   "title"
     t.datetime "created_at",                 null: false
@@ -102,7 +79,6 @@ ActiveRecord::Schema.define(version: 20160329170336) do
     t.date     "date"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.integer  "itinerary_id"
     t.float    "latitude"
     t.float    "longitude"
     t.string   "address"
@@ -110,7 +86,6 @@ ActiveRecord::Schema.define(version: 20160329170336) do
     t.integer  "road_trip_id"
   end
 
-  add_index "stops", ["itinerary_id"], name: "index_stops_on_itinerary_id", using: :btree
   add_index "stops", ["road_trip_id"], name: "index_stops_on_road_trip_id", using: :btree
 
   create_table "users", force: :cascade do |t|
@@ -135,11 +110,9 @@ ActiveRecord::Schema.define(version: 20160329170336) do
 
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
-  add_foreign_key "itineraries", "road_trips"
   add_foreign_key "posts", "road_trips"
   add_foreign_key "profiles", "users"
   add_foreign_key "road_trips", "users"
-  add_foreign_key "stops", "itineraries"
   add_foreign_key "stops", "road_trips"
   add_foreign_key "users", "profiles"
 end
