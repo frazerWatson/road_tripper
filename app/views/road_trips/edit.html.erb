@@ -43,41 +43,84 @@
     });
   }
   <% if @hash.empty? || @hash.length == 1 %>
-    loadMap();
+  loadMap();
   <% else %>
 
-function initialize() {
-var directionsDisplay = new google.maps.DirectionsRenderer();
-var directionsService = new google.maps.DirectionsService();
+    $.getJSON('/stops.json', function(data){
+      console.log(data)
+      drawMap(data);
+    })
 
-function calcRoute() {
-  var origin      = new google.maps.LatLng(<%= @road_trip.stops[0].latitude %>, <%= @road_trip.stops[0].longitude %>);
-  var destination = new google.maps.LatLng(<%= @road_trip.stops[1].latitude %>, <%= @road_trip.stops[1].longitude %>);
-  var request = {
-      origin:      origin,
-      destination: destination,
-      travelMode:  google.maps.TravelMode.DRIVING
-  };
-  directionsService.route(request, function(response, status) {
-    if (status == google.maps.DirectionsStatus.OK) {
-      directionsDisplay.setDirections(response);
+  function drawMap(data) {
+    var directionsDisplay = new google.maps.DirectionsRenderer();
+    var directionsService = new google.maps.DirectionsService();
+
+      var wps = [];
+      var jsonStops = data;
+      console.log(jsonStops + "HhHHHHHHH")
+      var roadTripId = <%= @road_trip.id %>
+      var stopsArray = [];
+      console.log(jsonStops[0].road_trip_id + "hfejhfehfiuhshfiueshu")
+
+      for (i=0; i < jsonStops.length; i++) {
+        if (jsonStops[i].road_trip_id == roadTripId) {
+          stopsArray.push(jsonStops[i])
+          console.log(jsonStops[i])
+        }
+      }
+      console.log(stopsArray + "hehehehehehheh")
+      console.log(stopsArray[0].latitude)
+
+    for ( i= 0; i < stopsArray.length; i++ ) {
+      var subObject = {}
+      subObject.location = new google.maps.LatLng(stopsArray[i].latitude, stopsArray[i].longitude);
+      wps.push(subObject)
     }
-  });
-}
+    console.log(stopsArray.length)
+      console.log(stopsArray[0].latitude + "$$$$")
 
-calcRoute();
+        function calcRoute() {
+         var origin      = new google.maps.LatLng(stopsArray[0].latitude, stopsArray[0].longitude);
+         var destination = new google.maps.LatLng(stopsArray[stopsArray.length-1].latitude, stopsArray[stopsArray.length-1].longitude); 
+         var request = {
+          origin:      origin,
+          destination: destination,
+          waypoints: wps,
+          travelMode:  google.maps.DirectionsTravelMode.DRIVING
+        };
+        directionsService.route(request, function(response, status) {
+          if (status == google.maps.DirectionsStatus.OK) {
+            directionsDisplay.setDirections(response);
+          }
+        });
+      }
 
-var handler = Gmaps.build('Google');
-handler.buildMap({ internal: {id: 'directions'}}, function(){
-  directionsDisplay.setMap(handler.getMap());
-});
+      calcRoute();
 
-}
-google.maps.event.addDomListener(window, "load", initialize);
+      var handler = Gmaps.build('Google');
+      handler.buildMap({ internal: {id: 'directions'}}, function(){
+        directionsDisplay.setMap(handler.getMap());
+      });
 
-<% end %>
+    
 
-</script>
+  }
+  //  google.maps.event.addDomListener(window, "load", initialize);
+
+    <% end %>
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
  <div style='width: 800px;'>
     <div id="directions" style='width: 800px; height: 400px;'></div>
   </div>
