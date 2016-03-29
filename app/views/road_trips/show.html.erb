@@ -135,6 +135,10 @@
 
 
 <% @road_trip.posts.reverse_each do |post| %>
+  <% if current_user == post.road_trip.user %>
+  <%= link_to 'Edit', edit_post_path(post) %>
+  <%= link_to 'x', post_path(post), method: :delete %>
+  <%end%>
   <%= post.created_at %></br>
   <%= post.title %></br>
   <% if post.image.file? %>
