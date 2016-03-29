@@ -1,6 +1,20 @@
-<h1>Dashboard</h1>
+<h1><%= @road_trip.title %></h1>
+<h2><%= @road_trip.user.profile.username %></h2>
 
-<%= render 'form' %>
+<%= link_to 'View trip', road_trip_path(@road_trip.id) %>
+
+<h1>Planned stops</h1>
+<div>
+  <% if @road_trip.stops.any? %>
+    <% @road_trip.stops.order(:date).each do |stop| %>
+      <%= stop.address %><br />
+      <%= stop.description %><br />
+      <%= stop.date %><br />
+      <%= link_to 'Edit', edit_stop_path(stop) %>
+      <%= link_to 'x', stop_path(stop), method: :delete %>
+      <br />
+    <% end %>
+  <% end %>
 
 <div style='width: 800px;'>
   <div id="map" style='width: 800px; height: 400px;'></div>
@@ -119,18 +133,6 @@
 
 
 <%= link_to 'Add new post', new_post_path(:id => @road_trip.id) %>
-<%= link_to 'View trip profile', road_trip_path(@road_trip.id) %>
 <%= link_to 'Add new Stop', new_stop_path(:id => @road_trip.id) %>
-<div>
-  <% if @road_trip.stops.any? %>
-    <% @road_trip.stops.order(:date).each do |stop| %>
-      <%= stop.address %><br />
-      <%= stop.description %><br />
-      <%= stop.date %><br />
-      <%= link_to 'Delete stop', stop_path(stop), method: :delete %>
-      <br />
-    <% end %>
-  <% end %>
 
-</div>
 
