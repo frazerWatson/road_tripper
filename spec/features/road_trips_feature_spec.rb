@@ -9,25 +9,27 @@ feature 'Road trips' do
   context 'as a signed in user' do
     scenario 'can edit their road trips' do
       click_link('Dashboard')
+      click_link('Edit')
       fill_in 'Title', with: 'I Changed My Mind'
       click_button('Update Road trip')
       expect(page).to have_content 'I Changed My Mind'
       expect(page).to_not have_content "An Epic Road Trip!"
     end
 
-    xscenario 'can delete their road trips' do
-      expect(page).to have_content "An Epic Road Trip!"
-      click_link ('Delete road trip')
-      expect(page).to_not have_content "An Epic Road Trip!"
-      expect(current_path).to eq "/road_trips"      
+    scenario 'errors if updating with missing title' do
+      click_link('Dashboard')
+      click_link('Edit')
+      fill_in 'Title', with: ''
+      click_button('Update Road trip')
+      expect(page).to have_content "Title can't be blank"
     end
 
-    scenario 'cannot delete other users\' road trips' do
-      click_link 'Sign out'
-      user_sign_up('user2@test.com')     
-      click_link('View trip')
-      expect(current_path).to eq "/road_trips/1"  
-      expect(page).to_not have_content 'Delete road trip'
+    scenario 'errors if updating with missing description' do
+      click_link('Dashboard')
+      click_link('Edit')
+      fill_in 'Description', with: ''
+      click_button('Update Road trip')
+      expect(page).to have_content "Description can't be blank"
     end
   end
 
