@@ -1,33 +1,12 @@
-<p id="notice"><%= notice %></p>
+<h1>All profiles</h1>
 
-<h1>View All User Profiles</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <th>Username</th>
-      <th>Hometown</th>
-      <th>First name</th>
-      <th>Last name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @profiles.each do |profile| %>
-      <tr>
-      <% if profile.avatar.file? %>
-        <td><%= image_tag profile.avatar.url(:thumb) %></td>
-        <% end %>
-        <td><%= profile.username %></td>
-        <td><%= profile.hometown %></td>
-        <td><%= profile.first_name %></td>
-        <td><%= profile.last_name %></td>
-        <td><%= link_to 'Show', profile %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+<% @profiles.each do |profile| %>
+  <% if profile.avatar.file? %>
+    <p><%= image_tag profile.avatar.url(:thumb) %></p>
+  <% end %>
+  <p><%= profile.username %></p>
+  <p><%= profile.hometown %></p>
+  <p><%= profile.first_name %></p>
+  <p><%= profile.last_name %></p>
+  <p><%= link_to 'Show', profile %></p>
+<% end %>
