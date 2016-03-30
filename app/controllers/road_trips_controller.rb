@@ -11,7 +11,7 @@ class RoadTripsController < ApplicationController
   # GET /road_trips/1.json
   def show
     # @current_location = request.location.city
-    # @road_trip_stops = @road_trip.stops
+    @road_trip_stops = @road_trip.stops
     @hash = Gmaps4rails.build_markers(@road_trip_stops) do |stop, marker|
       marker.lat stop.latitude
       marker.lng stop.longitude
@@ -25,7 +25,7 @@ class RoadTripsController < ApplicationController
 
   # GET /road_trips/1/edit
   def edit
-      @current_location = request.location.city
+      # @current_location = request.location.city
       @road_trip_stops = @road_trip.stops
       @hash = Gmaps4rails.build_markers(@road_trip_stops) do |stop, marker|
         marker.lat stop.latitude
