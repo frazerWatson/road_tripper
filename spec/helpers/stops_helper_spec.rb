@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 def add_stop(location)
-  fill_in 'Location', with: location
+  fill_in 'Address', with: location
   select '1', from: 'stop[date(3i)]'
   select '2016', from: 'stop[date(1i)]'
   select 'May', from: 'stop[date(2i)]'

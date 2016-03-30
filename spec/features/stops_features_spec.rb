@@ -7,7 +7,6 @@ feature 'Stops' do
     user_sign_up("user1@test.com")
     create_road_trip("An Epic Road Trip!")
     click_link 'Dashboard'
-    create_itinerary('London', 'Berlin')
     click_link 'Add new Stop'
     add_stop('Calais')
     expect(page).to have_content 'Calais'

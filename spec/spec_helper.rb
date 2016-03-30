@@ -9,7 +9,6 @@ require 'support/database_cleaner'
 require 'helpers/users_helper_spec'
 require 'helpers/road_trips_helper_spec'
 require 'helpers/posts_helper_spec'
-require 'helpers/itineraries_helper_spec'
 require 'helpers/comments_helper_spec'
 require 'helpers/stops_helper_spec'
 
