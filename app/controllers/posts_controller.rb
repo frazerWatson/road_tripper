@@ -32,11 +32,9 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    url = "/road_trips/#{@post.road_trip_id}"
+    road_trip = @post.road_trip
     @post.destroy
-    respond_to do |format|
-      format.html { redirect_to url, notice: 'Post was successfully destroyed.' }
-    end
+    redirect_to road_trip
   end
 
   private

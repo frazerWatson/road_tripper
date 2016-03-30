@@ -52,7 +52,8 @@ class RoadTripsController < ApplicationController
   def update
     respond_to do |format|
       if @road_trip.update(road_trip_params)
-        format.html { redirect_to @road_trip, notice: 'Road trip was successfully updated.' }
+        dashboard_url = "/road_trips/#{@road_trip.id}/edit"
+        format.html { redirect_to dashboard_url, notice: 'Road trip was successfully updated.' }
         format.json { render :show, status: :ok, location: @road_trip }
       else
         format.html { render :edit }

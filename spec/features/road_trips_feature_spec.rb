@@ -16,20 +16,12 @@ feature 'Road trips' do
       expect(page).to_not have_content "An Epic Road Trip!"
     end
 
-    scenario 'errors if updating with missing title' do
+    scenario 'can attach a feature image to their road trips' do
       click_link('Dashboard')
       click_link('Edit')
-      fill_in 'Title', with: ''
+      attach_file "Image", Rails.root.to_s + "/spec/asset_specs/photos/photo1.jpg"
       click_button('Update Road trip')
-      expect(page).to have_content "Title can't be blank"
-    end
-
-    scenario 'errors if updating with missing description' do
-      click_link('Dashboard')
-      click_link('Edit')
-      fill_in 'Description', with: ''
-      click_button('Update Road trip')
-      expect(page).to have_content "Description can't be blank"
+      expect(page).to have_selector("img")
     end
   end
 
@@ -46,11 +38,6 @@ feature 'Road trips' do
     scenario 'cannot view a road trip\'s dashboard' do
       click_link('View trip')
       expect(page).to_not have_content "Dashboard"
-    end
-
-    scenario 'cannot delete any road trip' do
-      click_link('View trip')
-      expect(page).to_not have_content "Delete road trip"
     end
   end
 end

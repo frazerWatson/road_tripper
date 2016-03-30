@@ -6,13 +6,10 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
-    respond_to do |format|
-      if @comment.save
-        url = "/road_trips/#{@comment.post.road_trip_id}/"
-        format.html { redirect_to url, notice: 'Comment was successfully created.' }
-      else
-        format.html { render :new }
-      end
+    if @comment.save
+      redirect_to @comment.post.road_trip
+    else
+      render :new
     end
   end
 

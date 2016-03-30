@@ -11,7 +11,7 @@ feature 'Users can comment' do
 
   scenario 'on their own posts' do
     add_comment("Best of luck to myself!")
-    expect(current_path).to eq "/road_trips/1/"
+    expect(current_path).to eq "/road_trips/1"
     expect(page).to have_content "Best of luck to myself!"
   end
 
