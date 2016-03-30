@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+
 
 <h1>Listing Comments</h1>
 
@@ -14,9 +14,6 @@
     <% @comments.each do |comment| %>
       <tr>
         <td><%= comment.remark %></td>
-        <td><%= link_to 'Show', comment %></td>
-        <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
-        <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +21,3 @@
 
 <br>
 
-<%= link_to 'New Comment', new_comment_path %>

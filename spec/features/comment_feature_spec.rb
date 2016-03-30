@@ -22,4 +22,10 @@ feature 'Users can comment' do
     add_comment("Have fun Dan!")
     expect(page).to have_content "Have fun Dan!"
   end
+
+  scenario 'shows an error message when remark is blank' do
+    add_comment("")
+    expect(page).to have_content "Remark can't be blank"
+  end
+
 end
