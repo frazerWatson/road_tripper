@@ -28,8 +28,8 @@ class StopsController < ApplicationController
 
     respond_to do |format|
       if @stop.save
-        url = "/road_trips/#{@stop.road_trip_id}/edit"
-        format.html { redirect_to url, notice: 'Stop was successfully created.' }
+        dashboard_url = "/road_trips/#{@stop.road_trip_id}/edit"
+        format.html { redirect_to dashboard_url, notice: 'Stop was successfully created.' }
         format.json { render :show, status: :created, location: @stop }
       else
         format.html { render :new }
@@ -43,7 +43,8 @@ class StopsController < ApplicationController
   def update
     respond_to do |format|
       if @stop.update(stop_params)
-        format.html { redirect_to @stop, notice: 'Stop was successfully updated.' }
+        dashboard_url = "/road_trips/#{@stop.road_trip_id}/edit"
+        format.html { redirect_to dashboard_url, notice: 'Stop was successfully updated.' }
         format.json { render :show, status: :ok, location: @stop }
       else
         format.html { render :edit }
