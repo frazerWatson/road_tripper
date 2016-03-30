@@ -23,6 +23,9 @@
   <%= link_to image_tag("/assets/roadtripper_logo.png"), road_trips_path, class: "header_logo"  %>
   <% if user_signed_in? %>
   <%= link_to 'My profile', profile_path(current_user.profile.id) %>
+
+  <%= link_to image_tag(current_user.profile.avatar.url(:thumb)), profile_path(current_user.profile.id), class: "img-circle" %>
+
     <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "header_button" %>
   <% else %>
     <%= button_to "Sign in", new_user_session_path, class: "header_button" %>
