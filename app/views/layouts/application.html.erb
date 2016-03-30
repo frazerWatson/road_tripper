@@ -23,10 +23,10 @@
   <%= link_to 'Home', road_trips_path %>
   <% if user_signed_in? %>
   <%= link_to 'My profile', profile_path(current_user.profile.id) %>
-    <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+    <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "header_button" %>
   <% else %>
-    <%= link_to "Sign in", new_user_session_path %>
-    <%= link_to "Sign up", new_user_registration_path %>
+    <%= button_to "Sign in", new_user_session_path, class: "header_button" %>
+    <%= button_to "Sign up", new_user_registration_path, class: "header_button" %>
   <% end %>
   </div>
     <%= yield %>
