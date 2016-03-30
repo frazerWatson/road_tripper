@@ -12,7 +12,7 @@
     <% @road_trip.stops.order(:date).each do |stop| %>
       <%= stop.address %><br />
       <%= stop.description %><br />
-      <%= stop.date %><br />
+      <%= stop.date.strftime('%v') %><br />
       <%= link_to 'Modify', edit_stop_path(:id => stop.id, :road_trip_id => @road_trip.id) %>
       <%= link_to 'x', stop_path(stop), method: :delete %>
       <br />

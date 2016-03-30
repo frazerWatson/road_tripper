@@ -12,7 +12,7 @@
     <% @road_trip.stops.order(:date).each do |stop| %>
       <%= stop.address %><br />
       <%= stop.description %><br />
-      <%= stop.date %><br />
+      <%= stop.date.strftime('%v') %><br />
       <br />
     <% end %>
   <% end %>
