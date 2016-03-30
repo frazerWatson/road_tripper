@@ -35,19 +35,19 @@
 <script type="text/javascript">
   var currentLocation = { "lat": 51.517340, "lng": -0.073281 };
 
-  // if (navigator.geolocation) {
-  //   navigator.geolocation.getCurrentPosition(success, error);
-  // }
-  // else {
-  //   alert('geolocation not supported');
-  // }
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(success, error);
+  }
+  else {
+    alert('geolocation not supported');
+  }
 
-  // function success(position) {
-  //   currentLocation = { "lat": position.coords.latitude, "lng": position.coords.longitude }
-  //   loadMap();
-  // }
-  // function error(msg) {
-  // }
+  function success(position) {
+    currentLocation = { "lat": position.coords.latitude, "lng": position.coords.longitude }
+    loadMap();
+  }
+  function error(msg) {
+  }
 
   var loadMap = function(){
     handler = Gmaps.build('Google');
