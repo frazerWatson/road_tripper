@@ -6,7 +6,7 @@ feature 'Users can comment' do
     create_road_trip("An Epic Road Trip!")
     click_link 'Dashboard'
     create_new_post("Just about to set off")
-    click_link 'View trip profile'
+    click_link 'View trip'
   end
 
   scenario 'on their own posts' do
@@ -18,7 +18,7 @@ feature 'Users can comment' do
   scenario 'on other users\' posts' do
     click_link 'Sign out'
     user_sign_up('user2@test.com')   
-    click_link 'View trip profile'
+    click_link 'View trip'
     add_comment("Have fun Dan!")
     expect(page).to have_content "Have fun Dan!"
   end
