@@ -24,7 +24,7 @@
 
   <div class="field">
     <%= f.label :date %><br>
-    <%= f.date_select :date, :required => true %>
+    <%= f.date_select :date, :required => true, :order => [:day, :month, :year] %>
   </div>
   <div class="actions">
     <%= f.submit %>
