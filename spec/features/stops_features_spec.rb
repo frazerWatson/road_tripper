@@ -43,4 +43,13 @@ feature 'Stops' do
     expect(page).to have_content "Description can't be blank"
   end
 
+  scenario 'errors if editing a stop with missing data' do
+    click_link 'Add new Stop'
+    add_stop('Calais', 'Example description')
+    click_link 'Modify'
+    fill_in 'Address', with: ''
+    click_button 'Update Stop'    
+    expect(page).to have_content "Address can't be blank" 
+  end
+
 end
