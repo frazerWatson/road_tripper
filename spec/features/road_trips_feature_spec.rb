@@ -19,7 +19,7 @@ feature 'Road trips' do
     scenario 'can attach a feature image to their road trips' do
       click_link('Dashboard')
       click_link('Edit')
-      attach_file "Image", Rails.root.to_s + "/spec/asset_specs/photos/photo1.jpg"
+      attach_file "Feature image", Rails.root.to_s + "/spec/asset_specs/photos/photo1.jpg"
       click_button('Update Road trip')
       expect(page).to have_selector("img")
     end

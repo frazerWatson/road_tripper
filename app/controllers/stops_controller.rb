@@ -1,6 +1,10 @@
 class StopsController < ApplicationController
   before_action :set_stop, only: [:edit, :update, :destroy]
 
+  def index
+    @stops = Stop.all
+  end
+
   def new
     @stop = Stop.new
   end
