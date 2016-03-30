@@ -23,4 +23,24 @@ feature 'Posting on road trips' do
     click_link 'View trip'
     expect(page).to have_selector("img")
   end
+
+  scenario 'user can delete a post' do
+    create_new_post("Just about to set off")
+    click_link 'View trip'
+    expect(page).to have_content "Just about to set off"
+    click_link 'x'
+    expect(page).to_not have_content "Just about to set off"    
+  end
+
+  scenario 'user can modify a post' do
+    create_new_post("Just about to set off")
+    click_link 'View trip'
+    expect(page).to have_content "Just about to set off"
+    click_link 'Edit'
+    fill_in 'Title', with: "I'm not going now"
+    click_button 'Update Post'   
+    expect(page).to_not have_content "Just about to set off"  
+    expect(current_path).to eq "/road_trips/1"  
+    expect(page).to have_content "I'm not going now"
+  end
 end

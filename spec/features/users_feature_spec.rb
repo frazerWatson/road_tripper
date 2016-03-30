@@ -22,6 +22,16 @@ feature 'Users and profiles' do
     expect(page).to have_selector("img")
   end
 
+  scenario 'signed in user can edit own profile' do
+    user_sign_up("user1@test.com")
+    click_link 'My profile'
+    click_link 'Edit'
+    fill_in 'Username', with: 'Bob23'
+    click_button 'Update Profile'
+    expect(page).to have_content 'Bob23'
+    expect(page).to_not have_content 'DanH'
+  end
+
   scenario 'anyone can view all user profiles' do
     user_sign_up("user1@test.com")
     click_link 'Sign out'
