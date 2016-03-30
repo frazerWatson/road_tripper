@@ -1,7 +1,8 @@
 <div class="center jumbotron">
   <span class = "jumbotron_header"><h1>Roads well traveled...</h1></span>
-  <%= button_to 'Begin your road trip', new_road_trip_path, class: "jumbotron_button" %>
+  <%= button_to 'Begin your road trip', new_road_trip_path, class: "jumbotron_button", method: :get %>
 </div>
+
 <div class="container-fluid">
 
 <h2 class = "title">Roadtripper favourites...</h2>
@@ -10,8 +11,11 @@
   <% @road_trips.each do |road_trip| %>
     <div class="third_column">
       <div class="third_column_inner">
-      <p><%= road_trip.title %></p>
-      <p><%= link_to 'View trip', road_trip %></p>
+      <%= image_tag road_trip.feature_image, class: "feature_image_home_page" %>
+      <h4><%= road_trip.title %></h4>
+      <p><%= road_trip.user.profile.username %></p>
+      <p><%= road_trip.description %></p>
+      <p class="view_trip_link_home_page"><%= link_to 'View trip', road_trip %></p>
       </div>
     </div>
   <% end %>
