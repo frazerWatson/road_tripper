@@ -17,7 +17,7 @@ feature 'Users and profiles' do
 
   scenario 'signed in user can view own profile' do
     user_sign_up("user1@test.com")
-    click_link 'View my profile'
+    click_link 'All profiles'
     expect(page).to have_content 'DanH'
     expect(page).to have_selector("img")
   end
@@ -25,7 +25,7 @@ feature 'Users and profiles' do
   scenario 'anyone can view all user profiles' do
     user_sign_up("user1@test.com")
     click_link 'Sign out'
-    click_link 'View all profiles'
+    click_link 'All profiles'
     expect(page).to have_content 'DanH'
   end
 end
