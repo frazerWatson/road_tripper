@@ -1,4 +1,4 @@
-# Road Tripper App
+# Road Tripper
 
 ## Repo Badges
 
@@ -33,7 +33,7 @@ An app to help you plan a road trip and share your journey with other users.
 
 ### RSpec (Rails - unit and feature tests)
 - rails g rspec:install (optional)
-- rspec 
+- rspec
 
 ## Implementation
 
@@ -44,8 +44,8 @@ Ruby on Rails with Postgresql and full CRUD functionality. RSpec testing framewo
 ### MVP
 
 ```
-As a user, 
-So that I can share a road trip, 
+As a user,
+So that I can share a road trip,
 I want to be able to create a road trip.
 ```
 ```
@@ -54,7 +54,7 @@ So that I can have a profile,
 I'd like to be able to sign up as a user.
 ```
 ```
-As a user, 
+As a user,
 So that I can see other people's trips,
 I'd like all trips to be public.
 ```
@@ -65,7 +65,7 @@ I'd like to have a dashboard.
 ```
 ```
 As a user,
-So that I can share my road trip with other people, 
+So that I can share my road trip with other people,
 I'd like to be able to make posts on my trip log.
 ```
 ```
