@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 def add_stop(location, description)
+  click_link 'Add new stop'
   fill_in 'Address', with: location
   fill_in 'Description', with: description
   select '2016', from: 'stop[date(1i)]'
