@@ -10,8 +10,8 @@ class RoadTripsController < ApplicationController
   # GET /road_trips/1
   # GET /road_trips/1.json
   def show
-    @current_location = request.location.city
-    @road_trip_stops = @road_trip.stops
+    # @current_location = request.location.city
+    # @road_trip_stops = @road_trip.stops
     @hash = Gmaps4rails.build_markers(@road_trip_stops) do |stop, marker|
       marker.lat stop.latitude
       marker.lng stop.longitude
@@ -53,9 +53,8 @@ class RoadTripsController < ApplicationController
   # PATCH/PUT /road_trips/1.json
   def update
     respond_to do |format|
-      dashboard_url = "/road_trips/#{@road_trip.id}/edit"
       if @road_trip.update(road_trip_params)
-        format.html { redirect_to dashboard_url, notice: 'Road trip was successfully updated.' }
+        format.html { redirect_to @road_trip, notice: 'Road trip was successfully updated.' }
         format.json { render :show, status: :ok, location: @road_trip }
       else
         format.html { render :edit }
@@ -82,6 +81,6 @@ class RoadTripsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def road_trip_params
-      params.require(:road_trip).permit(:title, :description, :user_id)
+      params.require(:road_trip).permit(:title, :description, :user_id, :feature_image)
     end
   end
