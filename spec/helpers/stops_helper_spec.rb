@@ -1,10 +1,11 @@
 require 'rails_helper'
 
-def add_stop(location)
+def add_stop(location, description)
+  click_link 'Add new stop'
   fill_in 'Address', with: location
-  select '1', from: 'stop[date(3i)]'
+  fill_in 'Description', with: description
   select '2016', from: 'stop[date(1i)]'
   select 'May', from: 'stop[date(2i)]'
+  select '1', from: 'stop[date(3i)]'
   click_button 'Create Stop'
-  expect(page).to have_content 'Calais'
 end

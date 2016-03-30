@@ -13,7 +13,7 @@
       <%= stop.address %><br />
       <%= stop.description %><br />
       <%= stop.date %><br />
-      <%= link_to 'Edit', edit_stop_path(stop) %>
+      <%= link_to 'Modify', edit_stop_path(:id => stop.id, :road_trip_id => @road_trip.id) %>
       <%= link_to 'x', stop_path(stop), method: :delete %>
       <br />
     <% end %>
@@ -35,7 +35,7 @@
 
 </script>
 
-<%= link_to 'Add new post', new_post_path(:id => @road_trip.id) %>
-<%= link_to 'Add new Stop', new_stop_path(:id => @road_trip.id) %>
+<%= link_to 'Add new post', new_post_path(:road_trip_id => @road_trip.id) %>
+<%= link_to 'Add new stop', new_stop_path(:road_trip_id => @road_trip.id) %>
 
 

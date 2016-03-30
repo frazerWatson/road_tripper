@@ -16,15 +16,15 @@
   <%= f.file_field :image %>
 </div>
 <div class="field">
-  <%= f.hidden_field :road_trip_id, value: params[:id] %>
+  <%= f.hidden_field :road_trip_id, value: params[:road_trip_id] %>
 </div>
 <div class="field">
   <%= f.label :title %><br>
-  <%= f.text_field :title %>
+  <%= f.text_field :title, :required => true %>
 </div>
 <div class="field">
   <%= f.label :body %><br>
-  <%= f.text_area :body %>
+  <%= f.text_area :body, :required => true %>
 </div>
 <div class="actions">
   <%= f.submit %>

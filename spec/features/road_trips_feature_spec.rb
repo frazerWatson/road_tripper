@@ -1,38 +1,41 @@
 require 'rails_helper'
 
 feature 'Road trips' do
-  before do
-    user_sign_up('user1@test.com')
-    create_road_trip("An Epic Road Trip!")
-  end
-
   context 'as a signed in user' do
     scenario 'can edit their road trips' do
+      user_sign_up('user1@test.com')
+      create_road_trip("An Epic Road Trip!")
       click_link('Dashboard')
+      click_link('Edit')
       fill_in 'Title', with: 'I Changed My Mind'
       click_button('Update Road trip')
       expect(page).to have_content 'I Changed My Mind'
       expect(page).to_not have_content "An Epic Road Trip!"
     end
 
-    xscenario 'can delete their road trips' do
-      expect(page).to have_content "An Epic Road Trip!"
-      click_link ('Delete road trip')
-      expect(page).to_not have_content "An Epic Road Trip!"
-      expect(current_path).to eq "/road_trips"      
+    scenario 'can attach a feature image to their road trips' do
+      user_sign_up('user1@test.com')
+      create_road_trip("An Epic Road Trip!")
+      click_link('Dashboard')
+      click_link('Edit')
+      attach_file "Feature image", Rails.root.to_s + "/spec/asset_specs/photos/photo1.jpg"
+      click_button('Update Road trip')
+      expect(page).to have_selector("img")
     end
 
-    scenario 'cannot delete other users\' road trips' do
-      click_link 'Sign out'
-      user_sign_up('user2@test.com')     
-      click_link('View trip')
-      expect(current_path).to eq "/road_trips/1"  
-      expect(page).to_not have_content 'Delete road trip'
+    scenario 'will error if creating road trip without description' do
+      user_sign_up('user1@test.com')
+      click_link 'Begin your road trip'
+      fill_in 'Title', with: "An Epic Road Trip!"
+      click_button 'Create Road trip' 
+      expect(page).to_not have_content "An Epic Road Trip!"    
     end
   end
 
   context 'as a non-signed in' do
     before do
+      user_sign_up('user1@test.com')
+      create_road_trip("An Epic Road Trip!")
       click_link 'Sign out'
     end
 
@@ -44,11 +47,6 @@ feature 'Road trips' do
     scenario 'cannot view a road trip\'s dashboard' do
       click_link('View trip')
       expect(page).to_not have_content "Dashboard"
-    end
-
-    scenario 'cannot delete any road trip' do
-      click_link('View trip')
-      expect(page).to_not have_content "Delete road trip"
     end
   end
 end

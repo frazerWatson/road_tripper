@@ -4,4 +4,7 @@ class Stop < ActiveRecord::Base
   geocoded_by :address
   after_validation :geocode
 
+  validates :address, presence: true
+  validates :description, presence: true
+  validates :date, presence: true
 end
