@@ -23,3 +23,5 @@
 .jumbotron_header {
   color: white;
 }
+
+.carousel-control { background: none !important; filter: none !important; progid:none !important; }
