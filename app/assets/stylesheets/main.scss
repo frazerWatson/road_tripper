@@ -2,6 +2,18 @@
   color: #666666;
 }
 
+.third_column {
+width: 33.3%;
+float: left;
+}
+
+.third_column_inner {
+  background-color: blue;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .container-fluid {
   padding: 0;
 }
