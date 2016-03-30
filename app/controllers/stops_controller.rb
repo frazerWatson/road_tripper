@@ -14,34 +14,25 @@ class StopsController < ApplicationController
 
   def create
     @stop = Stop.new(stop_params)
-
-    respond_to do |format|
       if @stop.save
-        dashboard_url = "/road_trips/#{@stop.road_trip_id}/edit"
-        format.html { redirect_to dashboard_url, notice: 'Stop was successfully created.' }
+        redirect_to edit_road_trip_path(@stop.road_trip)
       else
-        format.html { render :new }
+        render :new
       end
-    end
   end
 
   def update
-    respond_to do |format|
       if @stop.update(stop_params)
-        dashboard_url = "/road_trips/#{@stop.road_trip_id}/edit"
-        format.html { redirect_to dashboard_url, notice: 'Stop was successfully updated.' }
+        redirect_to edit_road_trip_path(@stop.road_trip)
       else
-        format.html { render :edit }
+        render :edit
       end
-    end
   end
 
   def destroy
-    dashboard_url = "/road_trips/#{@stop.road_trip_id}/edit"
+    stop = @stop.road_trip
     @stop.destroy
-    respond_to do |format|
-      format.html { redirect_to dashboard_url, notice: 'Stop was successfully destroyed.' }
-    end
+    redirect_to edit_road_trip_path(stop)
   end
 
   private

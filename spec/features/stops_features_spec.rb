@@ -12,6 +12,7 @@ feature 'Stops' do
     click_link 'Add new Stop'
     add_stop('Calais', 'Example description')
     expect(page).to have_content 'Calais'
+    expect(current_path).to eq "/road_trips/1/edit"
   end
 
   scenario 'can delete a stop' do
@@ -19,6 +20,7 @@ feature 'Stops' do
     add_stop('Calais', 'Example description')
     click_link 'x'
     expect(page).to_not have_content 'Calais'    
+    expect(current_path).to eq "/road_trips/1/edit"
   end
 
   scenario 'can edit a stop' do
@@ -29,6 +31,7 @@ feature 'Stops' do
     click_button 'Update Stop'    
     expect(page).to_not have_content 'Calais'
     expect(page).to have_content 'Dover'   
+    expect(current_path).to eq "/road_trips/1/edit"
   end
 
   scenario 'errors if address is missing' do
@@ -51,5 +54,4 @@ feature 'Stops' do
     click_button 'Update Stop'    
     expect(page).to have_content "Address can't be blank" 
   end
-
 end
