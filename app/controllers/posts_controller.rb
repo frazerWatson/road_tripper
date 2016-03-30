@@ -10,25 +10,20 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    respond_to do |format|
       if @post.save
-        url = "/road_trips/#{@post.road_trip_id}/edit"
-        format.html { redirect_to url, notice: 'Post was successfully created.' }
+        redirect_to @post.road_trip
       else
-        format.html { render :new }
+        render :new
       end
-    end
+
   end
 
   def update
-    url = "/road_trips/#{@post.road_trip_id}"
-    respond_to do |format|
       if @post.update(post_params)
-        format.html { redirect_to url, notice: 'Post was successfully updated.' }
+        redirect_to @post.road_trip
       else
-        format.html { render :edit }
+        render :edit
       end
-    end
   end
 
   def destroy
