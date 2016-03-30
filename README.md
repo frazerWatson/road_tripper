@@ -1,4 +1,4 @@
-# Road Tripper
+# RoadTripper
 
 ## Repo Badges
 
