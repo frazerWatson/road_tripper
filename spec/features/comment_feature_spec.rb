@@ -6,7 +6,6 @@ feature 'Users can comment' do
     create_road_trip("An Epic Road Trip!")
     click_link 'Dashboard'
     create_new_post("Just about to set off")
-    click_link 'View trip'
   end
 
   scenario 'on their own posts' do
