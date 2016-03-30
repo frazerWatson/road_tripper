@@ -6,7 +6,6 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
-
     respond_to do |format|
       if @comment.save
         url = "/road_trips/#{@comment.post.road_trip_id}/"
@@ -19,11 +18,7 @@ class CommentsController < ApplicationController
 
   private
 
-    def set_comment
-      @comment = Comment.find(params[:id])
-    end
-
-    def comment_params
-      params.require(:comment).permit(:remark, :user_id, :post_id)
-    end
+  def comment_params
+    params.require(:comment).permit(:remark, :user_id, :post_id)
+  end
 end
