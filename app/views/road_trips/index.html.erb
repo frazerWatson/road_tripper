@@ -1,12 +1,8 @@
-<div class="jumbotron">
-  <h1>Road Trips!</h1>
-  <p>Small text</p>
-  <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+<div class="center jumbotron">
+  <span class = "jumbotron_header"><h1>Roads well traveled...</h1></span>
+  <%= button_to 'Begin your road trip', new_road_trip_path, class: "jumbotron_button" %>
 </div>
 <div class="container-fluid">
-  
-<h1>Roads well traveled...</h1>
-<%= link_to 'Begin your road trip', new_road_trip_path %>
 
   <% @road_trips.each do |road_trip| %>
       <p><%= road_trip.title %></p>

@@ -2,6 +2,11 @@
   padding: 0;
 }
 
+.header_logo {
+  float: left;
+  margin-top: 15px;
+}
+
 .header_button {
   background-color: #9ACE0D;
   height: 40px;
@@ -10,8 +15,9 @@
   border-radius: 6px;
   color: white;
   float: right;
+  margin-top: 20px;
   margin-bottom: 20px;
-  margin-left: 10px;
+  margin-left: 5px;
 }
 
 .header_button:hover {
@@ -20,6 +26,28 @@
   box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.5);
 }
 
+.jumbotron_button {
+  background-color: #9ACE0D;
+  height: 60px;
+  width: 300px;
+  border-style: none;
+  border-radius: 30px;
+  color: white;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  font-size: 2em;
+}
+
+.jumbotron_button:hover {
+  -webkit-box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.5);
+  box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.5);
+}
+
 .jumbotron {
   text-align: center;
+}
+
+.jumbotron_header {
+  color: white;
 }
