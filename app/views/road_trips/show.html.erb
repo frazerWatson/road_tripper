@@ -5,8 +5,8 @@
             <div class="carousel-caption carousel-caption1" >
               <h1><%= @road_trip.title %></h1>
               <h3><%= @road_trip.user.profile.username %></h3>
-              <div>
-              <%= link_to image_tag(@road_trip.user.profile.avatar.url(:thumb)), profile_path(@road_trip.user.profile) %>
+              <div class="profile_circle">
+              <%= link_to image_tag(@road_trip.user.profile.avatar.url(:thumb), class:"profile_circle"), profile_path(@road_trip.user.profile) %>
             </div>
             </div>
           </div>

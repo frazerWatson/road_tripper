@@ -38,3 +38,7 @@ font-family: 'Great Vibes', cursive;
   font-family: 'Great Vibes', cursive;
   text-align: center;
 }
+
+.profile_circle {
+  border-radius: 50%;
+}
