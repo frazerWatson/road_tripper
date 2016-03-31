@@ -15,7 +15,7 @@ A responsive web application to help you plan a road trip and share your journey
 - [Barry Grubb](https://github.com/barrygrubb)
 - [Frazer Watson](https://github.com/frazerWatson)
 
-## Stack
+## Technology Stack
 
 - Ruby on Rails 4
 - Postgresql
