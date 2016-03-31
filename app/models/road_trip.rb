@@ -5,7 +5,8 @@ class RoadTrip < ActiveRecord::Base
 
   validates :title, presence: true
   validates :description, presence: true
+  validates_length_of :description, :minimum => 80
 
-  has_attached_file :feature_image, :styles => { :medium => "300x300>" }, :default_url => "/images/:style/missing.png"
+  has_attached_file :feature_image, :styles => { :feature => "1920x1080>" }, :default_url => "/images/:style/missing.png"
   validates_attachment_content_type :feature_image, :content_type => /\Aimage\/.*\Z/
 end

@@ -1,8 +1,9 @@
+<div class="centered-form">
 <h1>All profiles</h1>
 
 <% @profiles.each do |profile| %>
   <% if profile.avatar.file? %>
-    <p><%= image_tag profile.avatar.url(:thumb) %></p>
+    <p><%= image_tag profile.avatar.url(:thumb), class:"profile_circle" %></p>
   <% end %>
   <p><%= profile.username %></p>
   <p><%= profile.hometown %></p>
@@ -10,3 +11,4 @@
   <p><%= profile.last_name %></p>
   <p><%= link_to 'Show', profile %></p>
 <% end %>
+</div>
