@@ -81,3 +81,21 @@ float: left;
 .jumbotron_header {
   color: white;
 }
+
+.left_bar {
+  width: 25%;
+  float: left;
+  background-color: green;
+  height: 50px;
+  position: relative;
+  bottom: 80px;
+}
+
+.right_bar {
+  width: 75%;
+  float: left;
+  background-color: red;
+  height: 50px;
+  position: relative;
+  bottom: 80px;
+}

@@ -8,13 +8,16 @@
               <%= link_to image_tag(@road_trip.user.profile.avatar.url(:thumb), class:"profile_circle"), profile_path(@road_trip.user.profile) %>
             </div>
           </div>
-          <%= button_to 'Dashboard', edit_road_trip_path(@road_trip), class:"featured_image_button", method: :get %>
+          <% if current_user == @road_trip.user %>
+            <%= button_to 'Dashboard', edit_road_trip_path(@road_trip), class:"featured_image_button", method: :get %>
+          <% end %>
         </div>
     </div>
+      <div class="left_bar">
+      </div>
+      <div class="right_bar">
+      </div>
 
-<% if current_user == @road_trip.user %>
-  <%= link_to 'Dashboard', edit_road_trip_path(@road_trip) %>
-<% end %>
 
 <h1>Planned stops</h1>
 <div>
