@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 feature 'Road trips' do
+ 
   context 'as a signed in user' do
     scenario 'can edit their road trips' do
       user_sign_up('user1@test.com')

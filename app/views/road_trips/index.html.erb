@@ -5,7 +5,7 @@
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css"></script>
  <link rel="stylesheet" href="/stylesheets/road_trips.css">
-
+<link href='https://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
 </head>
 <body>
  
@@ -24,11 +24,13 @@
         <div class="item active">
           <img class="first-slide" src="assets/3561_desert-highway-pictures.jpg" alt="First slide">
           <div class="container">
-            <div class="carousel-caption">
-              <h1>Roads well travelled...</h1>
+            <div class="carousel-caption carousel-caption1" >
+              <h1 class="carousel-caption-h1">Roads well travelled</h1>
               <h3>“Happiness is a way of travel – not a destination.”</h3>
+              <div>
               <%= button_to 'Begin your road trip', new_road_trip_path, class:
-              'jumbotron_button'%>
+              'jumbotron_button', method: :get %>
+            </div>
             </div>
           </div>
         </div>
@@ -37,10 +39,10 @@
           <img class="second-slide" src="assets/alpine-road-wallpaper-1.jpg" alt="Second slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Live for the journey...</h1>
+              <h1 class="carousel-caption-h1">Live for the journey</h1>
               <h3>“Not all those who wander are lost.”</h3>
               <%= button_to 'Begin your road trip', new_road_trip_path, class:
-              'jumbotron_button'%>
+              'jumbotron_button', method: :get%>
             </div>
           </div>
         </div>
@@ -49,10 +51,10 @@
           <img class="third-slide" src="assets/other-pan-american-highway-sky-nature-hd-wallpapers-1920x1080.jpg" alt="Third slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Think of it as an adventure...</h1>
+              <h1 class="carousel-caption-h1">Think of it as an adventure</h1>
               <h3>“Travel is the only thing you buy that makes you richer.”</h3>
               <%= button_to 'Begin your road trip', new_road_trip_path, class:
-              'jumbotron_button'%>
+              'jumbotron_button', method: :get%>
             </div>
           </div>
         </div>
@@ -61,10 +63,10 @@
           <img class="fourth-slide" src="assets/highway-to-the-city-16206-1920x1080.jpg" alt="First slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>It's all about the journey...</h1>
+              <h1 class="carousel-caption-h1">It's all about the journey</h1>
               <h3>“People don’t take trips, trips take people.”</h3>
               <%= button_to 'Begin your road trip', new_road_trip_path, class:
-              'jumbotron_button'%>
+              'jumbotron_button', method: :get%>
             </div>
           </div>
         </div>
@@ -73,10 +75,10 @@
           <img class="fifth-slide" src="assets/new-zealand-scenery-wallpapers-56.jpg" alt="First slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Let the adventure begin...</h1>
+              <h1 class="carousel-caption-h1">Let the adventure begin</h1>
               <h3>“Stop worrying about the potholes in the road and enjoy the journey.”</h3>
               <%= button_to 'Begin your road trip', new_road_trip_path, class:
-              'jumbotron_button'%>
+              'jumbotron_button', method: :get%>
             </div>
           </div>
         </div>
@@ -85,10 +87,10 @@
           <img class="sixth-slide" src="assets/Italy-Amazing.jpg" alt="First slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Just go...</h1>
+              <h1 class="carousel-caption-h1">Just go...</h1>
               <h3>“Better to see something once than hear about it a thousand times”</h3>
               <%= button_to 'Begin your road trip', new_road_trip_path, class:
-              'jumbotron_button'%>
+              'jumbotron_button', method: :get%>
             </div>
           </div>
         </div>
