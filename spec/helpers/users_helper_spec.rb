@@ -11,5 +11,5 @@ def user_sign_up(email)
   fill_in 'Hometown', with: 'London'
   fill_in 'First name', with: 'Dan'
   fill_in 'Last name', with: 'Hash'
-  page.find(".actions").click
+  click_button 'Submit'
 end
