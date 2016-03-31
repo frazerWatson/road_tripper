@@ -118,3 +118,22 @@ float: left;
 .sidebar_stop_date {
   color: white;
 }
+
+.post {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  -webkit-box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.5);
+  box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.5);
+  padding: 10px;
+}
+
+.post_user_link {
+  color: #9ACE0D;
+  float: right;
+  margin-left: 5px;
+}
+
+.post_created_at {
+  float: left;
+}

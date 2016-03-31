@@ -29,29 +29,25 @@
         <h3>"<%= @road_trip.description.capitalize %>"</h3>
         <% end %>
         <%= render 'gmap' %>
+
+        <% @road_trip.posts.reverse_each do |post| %>
+        <div class="post">
+          <% if current_user == post.road_trip.user %>
+          <%= link_to 'x', post_path(post), method: :delete, class:"post_user_link" %>
+          <%= link_to 'Edit', edit_post_path(:id => post.id, :road_trip_id => @road_trip.id), class:"post_user_link" %>
+          <%end%>
+          <span class="post_created_at"><%= distance_of_time_in_words_to_now(post.created_at)%> ago</br></span>
+          <%= post.title %></br>
+          <% if post.image.file? %>
+            <%= image_tag post.image.url(:medium) %></br>
+          <% end %>
+          <%= post.body %></br><br>
+        </div>
+          <%= link_to 'Add comment', new_comment_path(:id => post.id) %><br>
+          <% post.comments.reverse_each do |comment| %>
+            <%= link_to comment.user.profile.username, profile_path(comment.user.profile) %>
+            <%= distance_of_time_in_words_to_now(comment.created_at) %> ago<br>
+            <%= comment.remark %><br>
+          <% end %>
+        <% end %>
       </div>
-
-
-
-
-
-
-
-<% @road_trip.posts.reverse_each do |post| %>
-  <% if current_user == post.road_trip.user %>
-  <%= link_to 'Edit', edit_post_path(:id => post.id, :road_trip_id => @road_trip.id) %>
-  <%= link_to 'x', post_path(post), method: :delete %>
-  <%end%>
-  <%= distance_of_time_in_words_to_now(post.created_at)%> ago</br>
-  <%= post.title %></br>
-  <% if post.image.file? %>
-    <%= image_tag post.image.url(:medium) %></br>
-  <% end %>
-  <%= post.body %></br><br>
-  <%= link_to 'Add comment', new_comment_path(:id => post.id) %><br>
-  <% post.comments.reverse_each do |comment| %>
-    <%= link_to comment.user.profile.username, profile_path(comment.user.profile) %>
-    <%= distance_of_time_in_words_to_now(comment.created_at) %> ago<br>
-    <%= comment.remark %><br>
-  <% end %>
-<% end %>
