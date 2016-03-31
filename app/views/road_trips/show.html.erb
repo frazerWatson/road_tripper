@@ -1,4 +1,3 @@
-
 <div class="carousel-inner" role="listbox">
         <div class="item active">
           <%= image_tag @road_trip.feature_image.url, class:"first-slide" %>
@@ -8,15 +7,11 @@
               <h3><%= @road_trip.user.profile.username %></h3>
               <div>
               <%= link_to image_tag(@road_trip.user.profile.avatar.url(:thumb)), profile_path(@road_trip.user.profile) %>
-
-              
             </div>
             </div>
           </div>
         </div>
     </div>
-
-   
 
 <% if current_user == @road_trip.user %>
   <%= link_to 'Dashboard', edit_road_trip_path(@road_trip) %>
@@ -32,7 +27,6 @@
       <br />
     <% end %>
   <% end %>
-
 </div>
 
 <% if @road_trip.description %>
