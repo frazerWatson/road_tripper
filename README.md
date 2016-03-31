@@ -8,21 +8,28 @@
 
 ## Description
 
-An app to help you plan a road trip and share your journey with other users.
+A responsive web application to help you plan a road trip and share your journey with other users.
 
 ## Team Members
-- Godfrey Chiu
-- Barry Grubb
-- Frazer Watson
+- [Godfrey Chiu](https://github.com/ggwc82)
+- [Barry Grubb](https://github.com/barrygrubb)
+- [Frazer Watson](https://github.com/frazerWatson)
 
 ## Stack
 
+- Ruby on Rails 4
 - Postgresql
-- Ruby on Rails
-- Heroku
+- Bootstrap
+- Hosted on Heroku
+
+## Additional Technologies
+
+- Amazon Web Services
+- Google Maps API
+- Geocoder
 
 ## Installation Instructions
-- Clone the repo
+- Clone the repository
 - bundle install
 - rake db:create
 - rake db:migrate
@@ -32,12 +39,12 @@ An app to help you plan a road trip and share your journey with other users.
 ## Testing Instructions
 
 ### RSpec (Rails - unit and feature tests)
-- rails g rspec:install (optional)
 - rspec
+- coveralls report
 
 ## Implementation
 
-Ruby on Rails with Postgresql and full CRUD functionality. RSpec testing framework. Uses 'geocoder' gem to wrap Google Maps javascript API. Coveralls and Travis CI.
+Roadtripper was built using Ruby on Rails with Postgresql. RSpec and Capybara is the main testing framework. We used 'Gmaps4rails' gem to wrap Google Maps Javascript API into our Ruby codebase. Test coverage is provided by Coveralls and TravisCI.
 
 ## Completed User Stories
 
@@ -45,44 +52,36 @@ Ruby on Rails with Postgresql and full CRUD functionality. RSpec testing framewo
 
 ```
 As a user,
-So that I can share a road trip,
+so that I can share my journey with others,
 I want to be able to create a road trip.
 ```
 ```
 As a user,
-So that I can have a profile,
+so that I can have a profile,
 I'd like to be able to sign up as a user.
 ```
 ```
 As a user,
-So that I can see other people's trips,
-I'd like all trips to be public.
+so that I can see other people's road trips,
+I'd like to be able to see all created road trips.
 ```
 ```
 As a user,
-So that I can plan my trip,
+so that I can plan my trip,
 I'd like to have a dashboard.
 ```
 ```
 As a user,
-So that I can share my road trip with other people,
-I'd like to be able to make posts on my trip log.
+so that I can share my road trip experience,
+I'd like to be able to make posts on my road trip.
 ```
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+As a user,
+so that I get feedback from other users,
+I'd like all users to be able to leave comments on my posts.
+```
+```
+As a user,
+so that I can plan my route,
+I'd like to be able to create stops and view the route on Google Maps.
+```
