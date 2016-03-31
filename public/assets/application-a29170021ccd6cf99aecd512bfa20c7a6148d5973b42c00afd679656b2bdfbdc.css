@@ -1,0 +1,416 @@
+/* line 1, /Users/GotWai/Dropbox/Projects/ROADTRIPPER/road_tripper/app/assets/stylesheets/main.scss */
+*:focus {
+  outline: 0;
+}
+
+/* line 5, /Users/GotWai/Dropbox/Projects/ROADTRIPPER/road_tripper/app/assets/stylesheets/main.scss */
+.title {
+  color: #666666;
+}
+
+/* line 9, /Users/GotWai/Dropbox/Projects/ROADTRIPPER/road_tripper/app/assets/stylesheets/main.scss */
+.third_column {
+  width: 33.3%;
+  float: left;
+  margin-bottom: 15px;
+}
+
+/* line 15, /Users/GotWai/Dropbox/Projects/ROADTRIPPER/road_tripper/app/assets/stylesheets/main.scss */
+.third_column_inner {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  padding: 10px;
+}
+
+/* line 27, /Users/GotWai/Dropbox/Projects/ROADTRIPPER/road_tripper/app/assets/stylesheets/main.scss */
+.feature_image_home_page {
+  width: 90%;
+}
+
+/* line 31, /Users/GotWai/Dropbox/Projects/ROADTRIPPER/road_tripper/app/assets/stylesheets/main.scss */
+.view_trip_link_home_page {
+  text-align: right;
+}
+
+/* line 35, /Users/GotWai/Dropbox/Projects/ROADTRIPPER/road_tripper/app/assets/stylesheets/main.scss */
+.container-fluid {
+  padding: 0;
+}
+
+/* line 39, /Users/GotWai/Dropbox/Projects/ROADTRIPPER/road_tripper/app/assets/stylesheets/main.scss */
+.header_logo {
+  float: left;
+  margin-top: 15px;
+}
+
+/* line 44, /Users/GotWai/Dropbox/Projects/ROADTRIPPER/road_tripper/app/assets/stylesheets/main.scss */
+.header_button {
+  background-color: #9ACE0D;
+  height: 40px;
+  width: 80px;
+  border-style: none;
+  border-radius: 6px;
+  color: white;
+  float: right;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 5px;
+}
+
+/* line 57, /Users/GotWai/Dropbox/Projects/ROADTRIPPER/road_tripper/app/assets/stylesheets/main.scss */
+.header_button:hover {
+  -webkit-box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.5);
+}
+
+/* line 63, /Users/GotWai/Dropbox/Projects/ROADTRIPPER/road_tripper/app/assets/stylesheets/main.scss */
+.jumbotron_button {
+  background-color: #9ACE0D;
+  height: 40px;
+  width: 300px;
+  border-style: none;
+  border-radius: 30px;
+  color: white;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  font-size: 2em;
+}
+
+/* line 75, /Users/GotWai/Dropbox/Projects/ROADTRIPPER/road_tripper/app/assets/stylesheets/main.scss */
+.jumbotron_button:hover {
+  font-size: 2.1em;
+  -webkit-box-shadow: 0px 2px 3px 2px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 2px 3px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 2px 3px 1px rgba(0, 0, 0, 0.5);
+}
+
+/* line 82, /Users/GotWai/Dropbox/Projects/ROADTRIPPER/road_tripper/app/assets/stylesheets/main.scss */
+.jumbotron {
+  text-align: center;
+}
+
+/* line 86, /Users/GotWai/Dropbox/Projects/ROADTRIPPER/road_tripper/app/assets/stylesheets/main.scss */
+.jumbotron_header {
+  color: white;
+}
+
+/* line 90, /Users/GotWai/Dropbox/Projects/ROADTRIPPER/road_tripper/app/assets/stylesheets/main.scss */
+.row {
+  display: table;
+}
+
+/* line 95, /Users/GotWai/Dropbox/Projects/ROADTRIPPER/road_tripper/app/assets/stylesheets/main.scss */
+.left_bar {
+  width: 20%;
+  float: left;
+  background-color: #9ACE0D;
+  position: relative;
+  bottom: 80px;
+  padding-left: 10px;
+  padding-right: 10px;
+  float: none;
+  display: table-cell;
+  vertical-align: top;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+/* line 110, /Users/GotWai/Dropbox/Projects/ROADTRIPPER/road_tripper/app/assets/stylesheets/main.scss */
+.left_bar h3 {
+  color: white;
+  font-size: 1.2em;
+  height: 100%;
+}
+
+/* line 116, /Users/GotWai/Dropbox/Projects/ROADTRIPPER/road_tripper/app/assets/stylesheets/main.scss */
+.right_bar {
+  width: 100%;
+  float: left;
+  position: relative;
+  bottom: 80px;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  float: none;
+  display: table-cell;
+  vertical-align: top;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  padding-top: 10px;
+}
+
+/* line 132, /Users/GotWai/Dropbox/Projects/ROADTRIPPER/road_tripper/app/assets/stylesheets/main.scss */
+.sidebar_stop_title {
+  color: white;
+}
+
+/* line 136, /Users/GotWai/Dropbox/Projects/ROADTRIPPER/road_tripper/app/assets/stylesheets/main.scss */
+.sidebar_stop_body {
+  color: #666666;
+}
+
+/* line 140, /Users/GotWai/Dropbox/Projects/ROADTRIPPER/road_tripper/app/assets/stylesheets/main.scss */
+.sidebar_stop_date {
+  color: white;
+}
+
+/* line 144, /Users/GotWai/Dropbox/Projects/ROADTRIPPER/road_tripper/app/assets/stylesheets/main.scss */
+.post {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  -webkit-box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  text-align: left;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 157, /Users/GotWai/Dropbox/Projects/ROADTRIPPER/road_tripper/app/assets/stylesheets/main.scss */
+.post_user_link {
+  color: #9ACE0D;
+  float: right;
+  margin-left: 5px;
+}
+
+/* line 163, /Users/GotWai/Dropbox/Projects/ROADTRIPPER/road_tripper/app/assets/stylesheets/main.scss */
+.post_created_at {
+  color: #666666;
+  float: left;
+}
+
+/* line 168, /Users/GotWai/Dropbox/Projects/ROADTRIPPER/road_tripper/app/assets/stylesheets/main.scss */
+.post_title {
+  color: #666666;
+}
+
+/* line 173, /Users/GotWai/Dropbox/Projects/ROADTRIPPER/road_tripper/app/assets/stylesheets/main.scss */
+.post_add_comment {
+  color: #9ACE0D !important;
+}
+
+/* line 178, /Users/GotWai/Dropbox/Projects/ROADTRIPPER/road_tripper/app/assets/stylesheets/main.scss */
+.post_comment_username {
+  color: #666666;
+  font-size: 1.2em;
+}
+
+/* line 183, /Users/GotWai/Dropbox/Projects/ROADTRIPPER/road_tripper/app/assets/stylesheets/main.scss */
+footer {
+  background-color: #666666;
+  height: 250px;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  bottom: 80px;
+}
+
+/* line 192, /Users/GotWai/Dropbox/Projects/ROADTRIPPER/road_tripper/app/assets/stylesheets/main.scss */
+.left_bar_user_actions {
+  color: white;
+  float: right;
+  padding-left: 5px;
+}
+/* line 5, /Users/GotWai/Dropbox/Projects/ROADTRIPPER/road_tripper/app/assets/stylesheets/profiles.scss */
+.jumbotron {
+  text-align: center;
+}
+.jumbotron_button {
+  background-color: #9ACE0D;
+  height: 50px;
+  width: 300px;
+  border-style: none;
+  border-radius: 30px;
+  color: white;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  font-size: 2em;
+}
+
+.jumbotron_button:hover {
+  -webkit-box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.5);
+  box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.5);
+}
+
+.jumbotron {
+  text-align: center;
+}
+
+.jumbotron_header {
+  color: white;
+  font-family: 'Great Vibes', cursive;
+}
+
+.carousel-control { background: none !important; filter: none !important; progid:none !important; }
+
+
+  .carousel-caption-h1 {
+    vertical-align: top;
+    font-size: 60px;
+font-family: 'Great Vibes', cursive;
+}
+
+.carousel-inner > h1 {
+  font-family: 'Great Vibes', cursive;
+  text-align: center;
+}
+
+.profile_circle {
+  border-radius: 50%;
+  border-style: solid;
+  border-color: white;
+  border-width: 6px;
+  -webkit-box-shadow: 0px 2px 3px 2px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 2px 3px 2px rgba(0,0,0,0.5);
+  box-shadow: 0px 2px 3px 1px rgba(0,0,0,0.5);
+  /*position: absolute;*/
+  /*left: 0;
+  bottom: 0;*/
+  width: 25%;
+}
+
+.featured_image_button{
+  background-color: #9ACE0D;
+  height: 40px;
+  width: 80px;
+  border-style: none;
+  border-radius: 6px;
+  color: white;
+  float: right;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 5px;
+  position: relative;
+  bottom: 80px;
+  right: 20px;
+}
+.featured_image_button:hover{
+  -webkit-box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.5);
+  box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.5);
+}
+
+.centered-form {
+  text-align: center;
+}
+
+input[type=file] {
+    margin: 0 auto;
+    padding-left: 100px;
+}
+
+.field_with_errors {
+      margin: 0 auto;
+}
+
+#error_explanation {
+      margin: 0 auto;
+}
+/* line 5, /Users/GotWai/Dropbox/Projects/ROADTRIPPER/road_tripper/app/assets/stylesheets/road_trips.scss */
+.carousel-inner > h1 {
+  font-family: 'Great Vibes', cursive;
+  text-align: center;
+}
+/* line 1, /Users/GotWai/Dropbox/Projects/ROADTRIPPER/road_tripper/app/assets/stylesheets/scaffolds.scss */
+body {
+  background-color: #fff;
+  color: #333;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 9, /Users/GotWai/Dropbox/Projects/ROADTRIPPER/road_tripper/app/assets/stylesheets/scaffolds.scss */
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 15, /Users/GotWai/Dropbox/Projects/ROADTRIPPER/road_tripper/app/assets/stylesheets/scaffolds.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 21, /Users/GotWai/Dropbox/Projects/ROADTRIPPER/road_tripper/app/assets/stylesheets/scaffolds.scss */
+a {
+  color: #000;
+}
+/* line 24, /Users/GotWai/Dropbox/Projects/ROADTRIPPER/road_tripper/app/assets/stylesheets/scaffolds.scss */
+a:visited {
+  color: #666;
+}
+/* line 28, /Users/GotWai/Dropbox/Projects/ROADTRIPPER/road_tripper/app/assets/stylesheets/scaffolds.scss */
+a:hover {
+  color: #fff;
+}
+
+/* line 34, /Users/GotWai/Dropbox/Projects/ROADTRIPPER/road_tripper/app/assets/stylesheets/scaffolds.scss */
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+/* line 39, /Users/GotWai/Dropbox/Projects/ROADTRIPPER/road_tripper/app/assets/stylesheets/scaffolds.scss */
+#notice {
+  color: green;
+}
+
+/* line 43, /Users/GotWai/Dropbox/Projects/ROADTRIPPER/road_tripper/app/assets/stylesheets/scaffolds.scss */
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+/* line 49, /Users/GotWai/Dropbox/Projects/ROADTRIPPER/road_tripper/app/assets/stylesheets/scaffolds.scss */
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+/* line 57, /Users/GotWai/Dropbox/Projects/ROADTRIPPER/road_tripper/app/assets/stylesheets/scaffolds.scss */
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0px;
+  background-color: #c00;
+  color: #fff;
+}
+/* line 68, /Users/GotWai/Dropbox/Projects/ROADTRIPPER/road_tripper/app/assets/stylesheets/scaffolds.scss */
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
