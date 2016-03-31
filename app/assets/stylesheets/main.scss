@@ -1,3 +1,7 @@
+*:focus {
+outline: 0;
+}
+
 .title {
   color: #666666;
 }
@@ -57,7 +61,7 @@ float: left;
 
 .jumbotron_button {
   background-color: #9ACE0D;
-  height: 60px;
+  height: 40px;
   width: 300px;
   border-style: none;
   border-radius: 30px;
@@ -68,9 +72,10 @@ float: left;
 }
 
 .jumbotron_button:hover {
-  -webkit-box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.5);
-  -moz-box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.5);
-  box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.5);
+  font-size: 2.1em;
+  -webkit-box-shadow: 0px 2px 3px 2px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 2px 3px 2px rgba(0,0,0,0.5);
+  box-shadow: 0px 2px 3px 1px rgba(0,0,0,0.5);
 }
 
 .jumbotron {
@@ -79,4 +84,112 @@ float: left;
 
 .jumbotron_header {
   color: white;
+}
+
+.row {
+  display: table;
+}
+
+
+.left_bar {
+  width: 25%;
+  float: left;
+  background-color: #9ACE0D;
+  position: relative;
+  bottom: 80px;
+  padding-left: 10px;
+  padding-right: 10px;
+  float: none;
+  display: table-cell;
+  vertical-align: top;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.left_bar h3 {
+  color: white;
+  font-size: 1.2em;
+  height: 100%;
+}
+
+.right_bar {
+  width: 75%;
+  float: left;
+  position: relative;
+  bottom: 80px;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  float: none;
+  display: table-cell;
+  vertical-align: top;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  padding-top: 10px;
+}
+
+.sidebar_stop_title {
+  color: white;
+}
+
+.sidebar_stop_body {
+  color: #666666;
+}
+
+.sidebar_stop_date {
+  color: white;
+}
+
+.post {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  -webkit-box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.5);
+  box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.5);
+  padding: 10px;
+  text-align: left;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.post_user_link {
+  color: #9ACE0D;
+  float: right;
+  margin-left: 5px;
+}
+
+.post_created_at {
+  color: #666666;
+  float: left;
+}
+
+.post_title {
+  color: #666666;
+
+}
+
+.post_add_comment {
+  color: #9ACE0D !important;
+
+}
+
+.post_comment_username {
+  color: #666666;
+  font-size: 1.2em;
+}
+
+footer {
+  background-color: #666666;
+  height: 250px;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  bottom: 80px;
+}
+
+.left_bar_user_actions {
+  color: white;
+  float: right;
+  padding-left: 5px;
 }

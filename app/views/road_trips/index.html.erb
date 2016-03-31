@@ -5,64 +5,87 @@
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css"></script>
  <link rel="stylesheet" href="/stylesheets/road_trips.css">
-
+<link href='https://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
 </head>
 <body>
- 
-
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
       <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
         <li data-target="#myCarousel" data-slide-to="2"></li>
         <li data-target="#myCarousel" data-slide-to="3"></li>
+        <li data-target="#myCarousel" data-slide-to="4"></li>
+        <li data-target="#myCarousel" data-slide-to="5"></li>
       </ol>
       <div class="carousel-inner" role="listbox">
         <div class="item active">
           <img class="first-slide" src="assets/3561_desert-highway-pictures.jpg" alt="First slide">
           <div class="container">
-            <div class="carousel-caption">
-              <h1>Roads well traveled...</h1>
-              <h3>“Remember that happiness is a way of travel – not a destination.” – Roy M. Goodman</h3>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Begin your road trip</a></p>
+            <div class="carousel-caption carousel-caption1" >
+              <h1 class="carousel-caption-h1">Roads well travelled</h1>
+              <h3>“Happiness is a way of travel – not a destination.”</h3>
+              <div>
+              <%= button_to 'Begin your road trip', new_road_trip_path, class:
+              'jumbotron_button', method: :get %>
+            </div>
             </div>
           </div>
         </div>
-
         <div class="item">
-          <img class="second-slide" src="assets/desert-highway-wallpaper.jpg" alt="Second slide">
+          <img class="second-slide" src="assets/alpine-road-wallpaper-1.jpg" alt="Second slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Where will you go?</h1>
-              <h3>“A journey is best measured in friends, rather than miles.” – Tim Cahill</h3>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Begin your road trip</a></p>
+              <h1 class="carousel-caption-h1">Live for the journey</h1>
+              <h3>“Not all those who wander are lost.”</h3>
+              <%= button_to 'Begin your road trip', new_road_trip_path, class:
+              'jumbotron_button', method: :get%>
             </div>
           </div>
         </div>
-
         <div class="item">
           <img class="third-slide" src="assets/other-pan-american-highway-sky-nature-hd-wallpapers-1920x1080.jpg" alt="Third slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Think of it as an adventure...</h1>
-              <h3>“Travel is the only thing you buy that makes you richer.” – Anonymous</h3>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+              <h1 class="carousel-caption-h1">Think of it as an adventure</h1>
+              <h3>“Travel is the only thing you buy that makes you richer.”</h3>
+              <%= button_to 'Begin your road trip', new_road_trip_path, class:
+              'jumbotron_button', method: :get%>
             </div>
           </div>
         </div>
-
         <div class="item">
-          <img class="first-slide" src="assets/highway-to-the-city-16206-1920x1080.jpg" alt="First slide">
+          <img class="fourth-slide" src="assets/highway-to-the-city-16206-1920x1080.jpg" alt="First slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>It's all about the journey...</h1>
-              <h3>“People don’t take trips, trips take people.” – John Steinbeck</h3>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Begin your road trip</a></p>
+              <h1 class="carousel-caption-h1">It's all about the journey</h1>
+              <h3>“People don’t take trips, trips take people.”</h3>
+              <%= button_to 'Begin your road trip', new_road_trip_path, class:
+              'jumbotron_button', method: :get%>
             </div>
           </div>
         </div>
-
+        <div class="item">
+          <img class="fifth-slide" src="assets/new-zealand-scenery-wallpapers-56.jpg" alt="First slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1 class="carousel-caption-h1">Let the adventure begin</h1>
+              <h3>“Stop worrying about the potholes in the road and enjoy the journey.”</h3>
+              <%= button_to 'Begin your road trip', new_road_trip_path, class:
+              'jumbotron_button', method: :get%>
+            </div>
+          </div>
+        </div>
+         <div class="item">
+          <img class="sixth-slide" src="assets/Italy-Amazing.jpg" alt="First slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1 class="carousel-caption-h1">Just go...</h1>
+              <h3>“Better to see something once than hear about it a thousand times”</h3>
+              <%= button_to 'Begin your road trip', new_road_trip_path, class:
+              'jumbotron_button', method: :get%>
+            </div>
+          </div>
+        </div>
       </div>
       <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
         <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -72,15 +95,9 @@
         <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
       </a>
-    </div><!-- /.carousel -->
-
-
-
-
+    </div>
 <div class="container-fluid">
-
-<h2 class = "title">Roadtripper favourites...</h2>
-
+  <h2 class = "title">Roadtripper favourites...</h2>
 <div class="row">
   <% @road_trips.each do |road_trip| %>
     <div class="third_column">
