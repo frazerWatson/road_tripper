@@ -30,6 +30,9 @@
       <% end %>
     </div>
     <div class="right_bar">
+      <% if @road_trip.description %>
+        <h4>"<%= @road_trip.description.capitalize %>"</h4>
+      <% end %>
       <div class="editform">
       <%= render 'form' %>
       </div>
