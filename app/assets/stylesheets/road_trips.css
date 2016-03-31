@@ -82,3 +82,11 @@ input[type=file] {
     margin: 0 auto;
     padding-left: 100px;
 }
+
+.field_with_errors {
+      margin: 0 auto;
+}
+
+#error_explanation {
+      margin: 0 auto;
+}
