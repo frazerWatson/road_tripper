@@ -14,28 +14,28 @@
         </div>
     </div>
       <div class="left_bar">
+        <h3>Planned stops</h3>
+        <% if @road_trip.stops.any? %>
+          <% @road_trip.stops.order(:date).each do |stop| %>
+            <p class="sidebar_stop_title"><%= stop.address %></p>
+            <p class="sidebar_stop_body"><%= stop.description %></p>
+            <p class="sidebar_stop_date"><%= stop.date.strftime('%v') %></p>
+            <br />
+          <% end %>
+        <% end %>
       </div>
       <div class="right_bar">
+        <% if @road_trip.description %>
+        <h3>"<%= @road_trip.description.capitalize %>"</h3>
+        <% end %>
+        <%= render 'gmap' %>
       </div>
 
 
-<h1>Planned stops</h1>
-<div>
-  <% if @road_trip.stops.any? %>
-    <% @road_trip.stops.order(:date).each do |stop| %>
-      <%= stop.address %><br />
-      <%= stop.description %><br />
-      <%= stop.date.strftime('%v') %><br />
-      <br />
-    <% end %>
-  <% end %>
-</div>
 
-<% if @road_trip.description %>
-<p>"<%= @road_trip.description.capitalize %>"</p>
-<% end %>
 
-<%= render 'gmap' %>
+
+
 
 <% @road_trip.posts.reverse_each do |post| %>
   <% if current_user == post.road_trip.user %>

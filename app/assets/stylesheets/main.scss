@@ -85,17 +85,36 @@ float: left;
 .left_bar {
   width: 25%;
   float: left;
-  background-color: green;
-  height: 50px;
+  background-color: #9ACE0D;
   position: relative;
   bottom: 80px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.left_bar h3 {
+  color: white;
+  font-size: 1.2em;
 }
 
 .right_bar {
   width: 75%;
   float: left;
-  background-color: red;
-  height: 50px;
   position: relative;
   bottom: 80px;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.sidebar_stop_title {
+  color: white;
+}
+
+.sidebar_stop_body {
+  color: #666666;
+}
+
+.sidebar_stop_date {
+  color: white;
 }
