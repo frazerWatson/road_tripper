@@ -26,7 +26,7 @@
       </div>
       <div class="right_bar">
         <% if @road_trip.description %>
-        <h3>"<%= @road_trip.description.capitalize %>"</h3>
+        <h4>"<%= @road_trip.description.capitalize %>"</h4>
         <% end %>
         <%= render 'gmap' %>
 
@@ -43,11 +43,12 @@
           <% end %>
           <%= post.body %></br><br>
           <%= link_to 'Add comment', new_comment_path(:id => post.id), class:"post_add_comment" %><br>
-        </div>
           <% post.comments.reverse_each do |comment| %>
-            <%= link_to comment.user.profile.username, profile_path(comment.user.profile) %>
-            <%= distance_of_time_in_words_to_now(comment.created_at) %> ago<br>
+            <%= link_to comment.user.profile.username, profile_path(comment.user.profile), class:"post_comment_username" %><br />
+            <span class="post_created_at"><%= distance_of_time_in_words_to_now(comment.created_at) %> ago<br></span><br />
             <%= comment.remark %><br>
           <% end %>
+        </div>
+
         <% end %>
       </div>

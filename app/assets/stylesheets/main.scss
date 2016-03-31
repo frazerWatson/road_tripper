@@ -98,6 +98,8 @@ float: left;
   float: none;
   display: table-cell;
   vertical-align: top;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
 .left_bar h3 {
@@ -117,6 +119,8 @@ float: left;
   float: none;
   display: table-cell;
   vertical-align: top;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
 .sidebar_stop_title {
@@ -161,5 +165,20 @@ float: left;
 }
 
 .post_add_comment {
-  color: #9ACE0D;
+  color: #9ACE0D !important;
+
+}
+
+.post_comment_username {
+  color: #666666;
+  font-size: 1.2em;
+}
+
+footer {
+  background-color: #666666;
+  height: 250px;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  bottom: 80px;
 }
