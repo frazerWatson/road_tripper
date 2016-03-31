@@ -1,3 +1,7 @@
+*:focus {
+outline: 0;
+}
+
 .title {
   color: #666666;
 }
@@ -121,6 +125,7 @@ float: left;
   vertical-align: top;
   padding-bottom: 0;
   margin-bottom: 0;
+  padding-top: 10px;
 }
 
 .sidebar_stop_title {
@@ -181,4 +186,10 @@ footer {
   margin: 0;
   position: relative;
   bottom: 80px;
+}
+
+.left_bar_user_actions {
+  color: white;
+  float: right;
+  padding-left: 5px;
 }
