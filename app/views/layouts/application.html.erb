@@ -17,7 +17,7 @@
       <%= button_to "My profile", profile_path(current_user.profile.id), class: "header_button", method: :get %>
   <% else %>
     <%= button_to "Sign in", new_user_session_path, class: "header_button", method: :get %>
-    <%= button_to "Sign up", new_user_registration_path, class: "header_button", method: :get %>
+    <%= button_to "Sign up", new_user_registration_path, class: "header_button header_button1", method: :get %>
   <% end %>
   </div>
     <%= yield %>
