@@ -90,3 +90,24 @@ input[type=file] {
 #error_explanation {
       margin: 0 auto;
 }
+
+.featured_image_button2{
+  background-color: #9ACE0D;
+  height: 40px;
+  width: 80px;
+  border-style: none;
+  border-radius: 6px;
+  color: white;
+  float: left;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 80px;
+  position: relative;
+  bottom: 80px;
+  right: 20px;
+}
+.featured_image_button2:hover{
+  -webkit-box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.5);
+  box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.5);
+}
