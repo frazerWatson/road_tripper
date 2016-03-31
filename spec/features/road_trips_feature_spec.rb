@@ -26,7 +26,7 @@ feature 'Road trips' do
 
     scenario 'will error if creating road trip without description' do
       user_sign_up('user1@test.com')
-      click_link 'Begin your road trip'
+      click_button('Begin your road trip', match: :first)
       fill_in 'Title', with: "An Epic Road Trip!"
       click_button 'Create Road trip' 
       expect(page).to_not have_content "An Epic Road Trip!"    
@@ -37,11 +37,11 @@ feature 'Road trips' do
     before do
       user_sign_up('user1@test.com')
       create_road_trip("An Epic Road Trip!")
-      click_link 'Sign out'
+      click_button 'Sign out'
     end
 
     scenario 'cannot create a road trip' do
-      click_link('Begin your road trip')
+      click_button('Begin your road trip', match: :first)
       expect(current_path).to eq '/users/sign_in'
     end
 
