@@ -15,7 +15,7 @@ feature 'Users can comment' do
   end
 
   scenario 'on other users\' posts' do
-    click_link 'Sign out'
+    click_button 'Sign out'
     user_sign_up('user2@test.com')   
     click_link 'View trip'
     add_comment("Have fun Dan!")
