@@ -82,6 +82,11 @@ float: left;
   color: white;
 }
 
+.row {
+  display: table;
+}
+
+
 .left_bar {
   width: 25%;
   float: left;
@@ -90,11 +95,15 @@ float: left;
   bottom: 80px;
   padding-left: 10px;
   padding-right: 10px;
+  float: none;
+  display: table-cell;
+  vertical-align: top;
 }
 
 .left_bar h3 {
   color: white;
   font-size: 1.2em;
+  height: 100%;
 }
 
 .right_bar {
@@ -105,6 +114,9 @@ float: left;
   text-align: center;
   padding-left: 10px;
   padding-right: 10px;
+  float: none;
+  display: table-cell;
+  vertical-align: top;
 }
 
 .sidebar_stop_title {
@@ -126,6 +138,10 @@ float: left;
   -moz-box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.5);
   box-shadow: 0px 1px 2px 1px rgba(0,0,0,0.5);
   padding: 10px;
+  text-align: left;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .post_user_link {
@@ -135,5 +151,15 @@ float: left;
 }
 
 .post_created_at {
+  color: #666666;
   float: left;
+}
+
+.post_title {
+  color: #666666;
+
+}
+
+.post_add_comment {
+  color: #9ACE0D;
 }
