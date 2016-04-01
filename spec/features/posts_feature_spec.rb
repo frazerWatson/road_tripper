@@ -4,7 +4,7 @@ feature 'Posting on road trips' do
   before do
     user_sign_up('user1@test.com')
     create_road_trip("An Epic Road Trip!")
-    click_link 'Dashboard'
+    click_button 'Dashboard'
   end
 
   scenario 'user can add a new post' do
@@ -14,7 +14,7 @@ feature 'Posting on road trips' do
   end
 
   scenario 'user can attach a photo' do
-    click_link 'Add new post'
+    click_link 'Add post'
     fill_in 'Title', with: "Transportation"
     fill_in 'Body', with: "This is my new ride!"
     attach_file "Image", Rails.root.to_s + "/spec/asset_specs/photos/photo1.jpg"
@@ -42,7 +42,7 @@ feature 'Posting on road trips' do
   end
 
   scenario 'errors if creating a post without a body' do
-    click_link 'Add new post'
+    click_link 'Add post'
     fill_in 'Title', with: title
     click_button 'Create Post'
     expect(page).to have_content "Body can't be blank"

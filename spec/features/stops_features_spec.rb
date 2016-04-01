@@ -5,7 +5,7 @@ feature 'Stops' do
     visit '/'
     user_sign_up("user1@test.com")
     create_road_trip("An Epic Road Trip!")
-    click_link 'Dashboard'
+    click_button 'Dashboard'
   end
 
   scenario 'can create a stop' do
@@ -17,7 +17,7 @@ feature 'Stops' do
   scenario 'can create multiple stops with routing' do
     add_stop('Calais', 'Example description')
     add_stop('Dover', 'Example description')
-    click_link 'View trip'
+    click_button 'View trip'
     expect(page).to have_content('Calais')
     expect(page).to have_content('Dover')
   end
@@ -31,7 +31,7 @@ feature 'Stops' do
 
   scenario 'can edit a stop' do
     add_stop('Calais', 'Example description')
-    click_link 'Modify'
+    click_link 'Edit'
     fill_in 'Address', with: 'Dover'
     click_button 'Update Stop'    
     expect(page).to_not have_content 'Calais'
@@ -51,7 +51,7 @@ feature 'Stops' do
 
   scenario 'errors if editing a stop with missing data' do
     add_stop('Calais', 'Example description')
-    click_link 'Modify'
+    click_link 'Edit'
     fill_in 'Address', with: ''
     click_button 'Update Stop'    
     expect(page).to have_content "Address can't be blank" 
