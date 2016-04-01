@@ -92,4 +92,4 @@ I'd like to be able to create stops and view the route on Google Maps.
 ## Screenshot
 
 ![
-screenshot](https://github.com/frazerWatson/road_tripper/blob/master/roadtripper-website.png)
+screenshot](https://github.com/frazerWatson/road_tripper/blob/514-fix-routing-issue/roadtripper-website.png)
