@@ -2,7 +2,7 @@ class StopsController < ApplicationController
   before_action :set_stop, only: [:edit, :update, :destroy]
 
   def index
-    @stops = Stop.all
+    @stops = Stop.all.order(:date)
   end
 
   def new
