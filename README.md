@@ -11,7 +11,7 @@
 A responsive web application to help you plan a road trip and share your journey with other users.
 
 ## Live MVP Demonstration
-[Roadtrippers on Heroku](http://roadtripper-makers.herokuapp.com)
+[Roadtripper on Heroku](http://roadtripper-makers.herokuapp.com)
 
 ## Team Members
 - [Godfrey Chiu](https://github.com/ggwc82)
